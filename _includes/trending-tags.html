@@ -13,16 +13,123 @@ trending_tags contains tag_name %} {% assign trending_tags = trending_tags |
 push: tag_name %} {% break %} {% endunless %} {% endif %} {% endfor %} {% endfor
 %} {% if trending_tags.size > 0 %}
 <section>
-  <h2 class="panel-heading">
-    {{- site.data.locales[include.lang].panel.trending_tags -}}
-  </h2>
+  <h2 class="panel-heading">Skills</h2>
+
+  <p>Programming Languages</p>
   <div class="d-flex flex-wrap mt-3 mb-1 me-3">
-    {% for tag_name in trending_tags %} {% assign url = tag_name | slugify |
-    url_encode | prepend: '/tags/' | append: '/' %}
-    <a class="post-tag btn btn-outline-primary" href="{{ url | relative_url }}"
-      >{{ tag_name }}</a
-    >
-    {% endfor %}
+    <!-- Programming Languages -->
+    <a class="post-tag btn btn-outline-primary">C</a>
+    <a class="post-tag btn btn-outline-primary">C++</a>
+    <a class="post-tag btn btn-outline-primary">C#</a>
+    <a class="post-tag btn btn-outline-primary">Python</a>
+    <a class="post-tag btn btn-outline-primary">Java</a>
+    <a class="post-tag btn btn-outline-primary">JavaScript</a>
+    <a class="post-tag btn btn-outline-primary">Swift</a>
+    <a class="post-tag btn btn-outline-primary">Kotlin</a>
+    <a class="post-tag btn btn-outline-primary">Objective-C++</a>
+    <a class="post-tag btn btn-outline-primary">MATLAB</a>
+    <a class="post-tag btn btn-outline-primary">SQL</a>
+    <a class="post-tag btn btn-outline-primary">Verilog HDL</a>
+    <a class="post-tag btn btn-outline-primary">VHDL</a>
+    <a class="post-tag btn btn-outline-primary">Visual Basic</a>
+    <a class="post-tag btn btn-outline-primary">LaTeX</a>
+  </div>
+
+  <p>Web Development</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Web Development -->
+    <a class="post-tag btn btn-outline-primary">HTML/CSS</a>
+    <a class="post-tag btn btn-outline-primary">React.js</a>
+    <a class="post-tag btn btn-outline-primary">Node.js</a>
+    <a class="post-tag btn btn-outline-primary">Spring Boot</a>
+    <a class="post-tag btn btn-outline-primary">.NET MVC</a>
+    <a class="post-tag btn btn-outline-primary">Bootstrap</a>
+    <a class="post-tag btn btn-outline-primary">Angular</a>
+  </div>
+
+  <p>Mobile Development</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Mobile Development -->
+    <a class="post-tag btn btn-outline-primary">Android SDK</a>
+    <a class="post-tag btn btn-outline-primary">iOS</a>
+    <a class="post-tag btn btn-outline-primary">macOS</a>
+    <a class="post-tag btn btn-outline-primary">XCode</a>
+  </div>
+
+  <p>Databases</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Databases -->
+    <a class="post-tag btn btn-outline-primary">SQLite</a>
+    <a class="post-tag btn btn-outline-primary">MySQL</a>
+  </div>
+
+  <p>Machine Learning & AI</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Machine Learning & AI -->
+    <a class="post-tag btn btn-outline-primary">Scikit-learn</a>
+    <a class="post-tag btn btn-outline-primary">Numpy</a>
+    <a class="post-tag btn btn-outline-primary">Pandas</a>
+    <a class="post-tag btn btn-outline-primary">Keras</a>
+    <a class="post-tag btn btn-outline-primary">Tensorflow</a>
+    <a class="post-tag btn btn-outline-primary">PyTorch</a>
+    <a class="post-tag btn btn-outline-primary">OpenCV</a>
+    <a class="post-tag btn btn-outline-primary">Seaborn</a>
+    <a class="post-tag btn btn-outline-primary">Matplotlib</a>
+    <a class="post-tag btn btn-outline-primary">Gaussian Splatting</a>
+    <a class="post-tag btn btn-outline-primary">NeRF</a>
+    <a class="post-tag btn btn-outline-primary">LiDAR</a>
+  </div>
+
+  <p>Embedded Systems & Hardware</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Embedded Systems & Hardware -->
+    <a class="post-tag btn btn-outline-primary">Arduino</a>
+    <a class="post-tag btn btn-outline-primary">STM32</a>
+    <a class="post-tag btn btn-outline-primary">FPGA</a>
+    <a class="post-tag btn btn-outline-primary">Xilinx FPGA</a>
+    <a class="post-tag btn btn-outline-primary">PXI</a>
+    <a class="post-tag btn btn-outline-primary">RS232</a>
+    <a class="post-tag btn btn-outline-primary">Embedded Programming</a>
+    <a class="post-tag btn btn-outline-primary">Hardware</a>
+    <a class="post-tag btn btn-outline-primary">Software</a>
+  </div>
+
+  <p>Game Development</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Game Development -->
+    <a class="post-tag btn btn-outline-primary">Unity</a>
+    <a class="post-tag btn btn-outline-primary">Shader Programming</a>
+    <a class="post-tag btn btn-outline-primary">OpenGL</a>
+  </div>
+
+  <p>DevOps & Cloud</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- DevOps & Cloud -->
+    <a class="post-tag btn btn-outline-primary">Amazon Web Services</a>
+    <a class="post-tag btn btn-outline-primary">Docker</a>
+    <a class="post-tag btn btn-outline-primary">Github</a>
+    <a class="post-tag btn btn-outline-primary">VMWare</a>
+    <a class="post-tag btn btn-outline-primary">CI/CD</a>
+  </div>
+
+  <p>Software Tools & Others</p>
+  <div class="d-flex flex-wrap mt-3 mb-1 me-3">
+    <!-- Software Tools & Others -->
+    <a class="post-tag btn btn-outline-primary">LabVIEW</a>
+    <a class="post-tag btn btn-outline-primary">Multisim</a>
+    <a class="post-tag btn btn-outline-primary">Altium Designer</a>
+    <a class="post-tag btn btn-outline-primary">AutoCAD</a>
+    <a class="post-tag btn btn-outline-primary">DAQmx</a>
+    <a class="post-tag btn btn-outline-primary">ROS</a>
+    <a class="post-tag btn btn-outline-primary">Linux</a>
+    <a class="post-tag btn btn-outline-primary">Windows</a>
+    <a class="post-tag btn btn-outline-primary">UI Design</a>
+    <a class="post-tag btn btn-outline-primary">VSCode</a>
+    <a class="post-tag btn btn-outline-primary">Visual Studio</a>
+    <a class="post-tag btn btn-outline-primary">IntelliJ IDEA</a>
+    <a class="post-tag btn btn-outline-primary">PyCharm</a>
+    <a class="post-tag btn btn-outline-primary">Photoshop</a>
+    <a class="post-tag btn btn-outline-primary">Premiere</a>
   </div>
 </section>
 {% endif %}

@@ -3,33 +3,171 @@ layout: page
 # The Archives of posts.
 ---
 
-{% include lang.html %}
+<div class="container mt-5">
+  <div class="project-section">
+    <h3>Deploying Gaussian Splatting on Apple Metal</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>National University of Singapore</strong></p>
+      <p>Sept 2024 - Jan 2025</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Hardware:</strong> Used OpenCV for camera distortion correction
+        and LiDAR for initial point cloud modeling and camera pose estimation.
+      </li>
+      <li>
+        <strong>Software:</strong> Translated C++ to Swift replacing PyTorch and
+        OpenCV with Apple’s simd and Metal frameworks for performance
+        optimization. Developed a Swift-based UI for interactive visualization
+        and user control.
+      </li>
+      <li>
+        <strong>Outcome:</strong> Successfully ported and optimized Gaussian
+        Splatting for Apple Metal, improving efficiency and compatibility with
+        Apple silicon.
+      </li>
+      <li><strong>Tools Used:</strong> Python, C++, Swift, Objective-C++</li>
+    </ul>
+  </div>
 
-{% assign df_strftime_m = site.data.locales[lang].df.archives.strftime | default: '/ %m' %}
-{% assign df_dayjs_m = site.data.locales[lang].df.archives.dayjs | default: '/ MM' %}
+  <hr />
 
-<div id="archives" class="pl-xl-3">
-  {% for post in site.posts %}
-    {% assign cur_year = post.date | date: '%Y' %}
+  <div class="project-section">
+    <h3>CamC: Multi-Platform Camera Price Comparison & Prediction</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>National University of Singapore</strong></p>
+      <p>June 2024 - Aug 2024</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Backend:</strong> Developed a Spring Boot REST API with MySQL
+        for data storage and JSON data exchange.
+      </li>
+      <li>
+        <strong>Frontend:</strong> Built a React.js web app and an Android
+        SDK-based mobile app.
+      </li>
+      <li>
+        <strong>ML:</strong> Implemented hierarchical clustering for camera
+        categorization and SVM for price prediction.
+      </li>
+      <li>
+        <strong>Tools Used:</strong> MySQL, Docker, AWS, Java, React.js, JSON,
+        Android SDK
+      </li>
+    </ul>
+  </div>
 
-    {% if cur_year != last_year %}
-      {% unless forloop.first %}</ul>{% endunless %}
+  <hr />
 
-      <time class="year lead d-block">{{ cur_year }}</time>
-      {{ '<ul class="list-unstyled">' }}
+  <div class="project-section">
+    <h3>LAPS: Leave Application & Processing System</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>National University of Singapore</strong></p>
+      <p>May 2024 - June 2024</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Software:</strong> Developed a Java-based web application with
+        MySQL as the backend database.
+      </li>
+      <li>
+        <strong>Outcome:</strong> Built a leave application and approval system.
+      </li>
+      <li><strong>Tools Used:</strong> Java, MySQL, Spring Boot</li>
+    </ul>
+  </div>
 
-      {% assign last_year = cur_year %}
-    {% endif %}
+  <hr />
 
-    <li>
-      {% assign ts = post.date | date: '%s' %}
-      <span class="date day" data-ts="{{ ts }}" data-df="DD">{{ post.date | date: '%d' }}</span>
-      <span class="date month small text-muted ms-1" data-ts="{{ ts }}" data-df="{{ df_dayjs_m }}">
-        {{ post.date | date: df_strftime_m }}
-      </span>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
+  <div class="project-section">
+    <h3>Automated Calibration System for A/D Modules</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>Harbin Institute of Technology</strong></p>
+      <p>Oct 2023 - May 2024</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Hardware:</strong> Designed a 16-channel line selection module
+        using a microcontroller, integrated with PXI chassis and a Fluke 5500A
+        calibration source for high-precision voltage output.
+      </li>
+      <li>
+        <strong>Software:</strong> Implemented calibration source control and
+        data fitting algorithms in LabVIEW, and developed C-based firmware for
+        line selection.
+      </li>
+      <li>
+        <strong>Outcome:</strong> Achieved automated A/D module calibration,
+        significantly improving efficiency and reducing calibration error to
+        0.001V.
+      </li>
+      <li>
+        <strong>Tools Used:</strong> C, Altium Designer, PCB, Circuit Design,
+        Embedded Programming, LabVIEW, Virtual Instruments, PXI, RS232
+      </li>
+    </ul>
+  </div>
 
-    {% if forloop.last %}</ul>{% endif %}
-  {% endfor %}
+  <hr />
+
+  <div class="project-section">
+    <h3>Automated Testing System for Signal Conditioning Circuits</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>Harbin Institute of Technology</strong></p>
+      <p>Aug 2023 - Sept 2023</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Hardware:</strong> Developed an automated testing setup for
+        signal conditioning circuits using a digital multimeter (RIGOL DM3058)
+        and programmable power supply.
+      </li>
+      <li>
+        <strong>Software:</strong> Designed and implemented LabVIEW-based
+        automation for performance testing, including voltage gain and stability
+        measurements. Developed C-based firmware for instrument communication.
+      </li>
+      <li>
+        <strong>Outcome:</strong> Enhanced testing efficiency by integrating
+        instrument automation, reducing measurement errors and improving testing
+        reproducibility.
+      </li>
+      <li>
+        <strong>Tools Used:</strong> LabVIEW, C, NI myDAQ, RIGOL DM3058,
+        Multisim, Automated Testing, Embedded Programming
+      </li>
+    </ul>
+  </div>
+
+  <hr />
+
+  <div class="project-section">
+    <h3>Semi-Automated Drone Docking and Charging Platform</h3>
+    <div class="d-flex justify-content-between">
+      <p><strong>Harbin Institute of Technology</strong></p>
+      <p>Oct 2021 - Sept 2022</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Hardware:</strong> Integrated DJI Matrice 100 with Manifold 2-C
+        onboard computer, OpenMV camera for marker detection, and wireless
+        charging modules for power transfer.
+      </li>
+      <li>
+        <strong>Software:</strong> Developed a Linux-based system with DJI
+        OnboardSDK and ROS, to enable autonomous flight control and
+        marker-guided landing.
+      </li>
+      <li>
+        <strong>Outcome:</strong> Implemented autonomous drone docking, landing,
+        and charging, reducing manual intervention and enhancing operational
+        efficiency.
+      </li>
+      <li>
+        <strong>Tools Used:</strong> Linux, ROS, Ubuntu, Python, OpenMV, C++,
+        DJI OnboardSDK
+      </li>
+    </ul>
+  </div>
 </div>
