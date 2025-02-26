@@ -1,5 +1,5 @@
 ---
-layout: categories
+layout: education
 icon: fas fa-stream
 order: 1
 ---
