@@ -3,142 +3,85 @@
 <head>
   <meta charset="utf-8">
   <title>Yuxuan Zhang</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="sidebar" style="position: fixed; left: 0; top: 0;
-  width: 250px; height: 100vh; background-color: lightgray;
-  padding: 40px; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">
+<div id="left-sidebar">
+  <img id="profile" src="img/profile.jpg" alt="">
 
-  <div style="text-align: center;">
-    <img src="img/Profile.JPG" style="width: 200px; height: 200px; border-radius: 10px" alt="">
-  </div>
+  <p class="name">Yuxuan Zhang</p>
+  <h3 class="text">Master's Student at National University of Singapore</h3>
 
-  <h1 style="color: #555555">Yuxuan Zhang</h1>
-  <h3 style="color: #777777">Master's Student, National University of Singapore</h3>
+  <hr>
 
-  <hr style="border: 1px solid #999999;">
+  <a onclick="loadContent('home')"><h2>Home</h2></a>
+  <a onclick="loadContent('educations')"><h2>Educations</h2></a>
+  <a onclick="loadContent('projects')"><h2>Projects</h2></a>
+  <a onclick="loadContent('works')"><h2>Works</h2></a>
+  <a onclick="loadContent('about')"><h2>About</h2></a>
 
-  <div id="menu" style="position: relative; left: 20px; top: 20px;">
-    <ul style="list-style-type: none; padding: 0;">
-      <li><a href="#" onclick="loadContent('home')" style="text-decoration: none;">
-        <h2 style="color: #777777"><img src="img/icon/6230039.png" style="width: 20px; height: 20px; opacity: 0.4; vertical-align: middle;" alt=""> Home</h2>
-      </a></li>
-      <li><a href="#" onclick="loadContent('educations')" style="text-decoration: none;">
-        <h2 style="color: #777777"><img src="img/icon/6230034.png" style="width: 20px; height: 20px; opacity: 0.4; vertical-align: middle;" alt=""> Educations</h2>
-      </a></li>
-      <li><a href="#" onclick="loadContent('projects')" style="text-decoration: none;">
-        <h2 style="color: #777777"><img src="img/icon/6230024.png" style="width: 20px; height: 20px; opacity: 0.4; vertical-align: middle;" alt=""> Projects</h2>
-      </a></li>
-      <li><a href="#" onclick="loadContent('works')" style="text-decoration: none;">
-        <h2 style="color: #777777"><img src="img/icon/9402616.png" style="width: 20px; height: 20px; opacity: 0.4; vertical-align: middle;" alt=""> Works</h2>
-      </a></li>
-      <li><a href="#" onclick="loadContent('about')" style="text-decoration: none;">
-        <h2 style="color: #777777"><img src="img/icon/5806440.png" style="width: 20px; height: 20px; opacity: 0.4; vertical-align: middle;" alt=""> About</h2>
-      </a></li>
-    </ul>
-  </div>
+  <hr>
 
-  <div style="position: fixed; left: 20px; bottom: 20px;">
-    <img src="img/icon/7914263.png"
-         style="width: 30px; height: 30px; opacity: 0.4;
-                border: 3px solid #777777; border-radius:10px; vertical-align: middle;" alt="">
-    <a href="https://github.com/YuxuanZhang271">
-      <img src="img/icon/bdf708f195939ef8e605f16ef67b3fa9.png" style="width: 40px; height: 40px; opacity: 0.4; vertical-align: middle;" alt=""></a>
-
-    <a href="mailto:e1216649@u.nus.edu">
-      <img src="img/icon/5806439.png" style="width: 30px; height: 30px; opacity: 0.4; vertical-align: middle;" alt=""></a>
-  </div>
-
+  <p><a href="mailto:e1216649@u.nus.edu">Email: e1216649@u.nus.edu</a></p>
+  <p><a href="https://github.com/YuxuanZhang271">Github: YuxuanZhang271</a></p>
 </div>
 
-<div id="right-sidebar" style="position: fixed; right: 0; top: 0;
-  width: 250px; height: 100vh; background: #eeeeee;
-  padding: 40px; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">
+<div id="right-sidebar">
+  <h2>Research Interests</h2>
 
-  <div>
-    <h3 style="color: #999999">Research Interests</h3>
-    <hr style="border: 1px solid #cccccc;">
+  <p>Computer Vision</p>
+  <p>Robotics</p>
+  <p>Human-Computer Interactions</p>
 
-    <p style="color: #999999">Human-Computer Interaction</p>
-    <p style="color: #999999">Machine Learning</p>
-    <p style="color: #999999">Computer Vision</p>
+  <hr>
+
+  <h2>Skills</h2>
+
+  <div id="skills">
+    <p class="sub-title">Embedded</p>
+    <span class="skill">C</span>
+    <span class="skill">C++</span>
+    <span class="skill">Verilog HDL</span>
+
+    <p class="sub-title">Data Analysis</p>
+    <span class="skill">Python</span>
+    <span class="skill">Numpy</span>
+    <span class="skill">Pandas</span>
+    <span class="skill">Scipy</span>
+    <span class="skill">Tensorflow</span>
+    <span class="skill">MATLAB</span>
+
+    <p class="sub-title">Web Development</p>
+    <span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">Go</span>
+    <span class="skill">Java (Spring Boot)</span><span class="skill">C# (ASP.NET)</span>
+    <span class="skill">AWS</span><span class="skill">Docker</span>
+
+    <p class="sub-title">Mobile Development</p>
+    <span class="skill">Java (Android)</span><span class="skill">Swift (iOS)</span>
+
+    <p class="sub-title">Databases</p>
+    <span class="skill">MySQL</span><span class="skill">SQLite</span>
+
+    <p class="sub-title">Games</p>
+    <span class="skill">C# (Unity)</span>
+
+    <p class="sub-title">Others</p>
+    <span class="skill">Altium Designer</span>
+    <span class="skill">FPGA</span>
+    <span class="skill">Linux (Ubuntu)</span>
+    <span class="skill">ROS</span>
+    <span class="skill">LabVIEW</span>
+    <span class="skill">AutoCAD</span>
+    <span class="skill">LaTeX</span>
+    <span class="skill">Photoshop</span>
+    <span class="skill">Premiere</span>
+    <span class="skill">Blender</span>
+    <span class="skill">Unity</span>
   </div>
-
-  <div>
-
-    <h3 style="color: #999999">Skills</h3>
-    <hr style="border: 1px solid #cccccc;">
-
-    <div style="margin-top: 20px; height: 600px; line-height: 2.5; overflow-y: auto; overflow-x: hidden;">
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">C</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Embedded Programming</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">C++</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Point Cloud Library</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">C#</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">.NET MVC</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Unity Script</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Unity Shader</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Java</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Spring Boot</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Android SDK</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Python</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Machine Learning</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Numpy</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Pandas</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Scikit-learn</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Keras</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">PyTorch</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">OpenCV</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Tensorflow</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Flask</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Spider</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">JavaScript</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">HTML/CSS</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">React.js</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">SQL</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">SQLite</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">MySQL</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">MATLAB</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Verilog HDL</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">FPGA</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Xilinx FPGA</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Altium Designer</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">AutoCAD</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">LabVIEW</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Multisim</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Proteus</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Github</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Docker</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">VMWare</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Microsoft Azure</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Amazon Web Services</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">VSCode</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Visual Studio</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Intellij IDEA</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">PyCharm</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">WebStorm</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">DataGrip</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Android Studio</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Windows</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Linux</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Ubuntu</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">MacOS</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">ROS</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Word</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">PowerPoint</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Excel</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Xmind</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">draw.io</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Photoshop</span>
-      <span style="color: #999999; width: fit-content; padding: 5px 10px; border: 2px solid #cccccc; border-radius:10px; white-space: nowrap; box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);">Premiere</span>
-    </div>
-
-  </div>
-
 </div>
 
-<div id="content" style="position: absolute; left: 400px; right: 400px; padding: 40px; overflow-y: auto; overflow-x: hidden;"></div>
+<div id="content" style=""></div>
 
 </body>
 </html>
@@ -148,153 +91,129 @@
     var content = document.getElementById("content");
 
     if (page === "home") {
-      content.innerHTML = "<div style='height: 100vh; padding: 40px; align-items: center'>" +
+      content.innerHTML = "<h1>Welcome to my personal website! 😊</h1>" +
 
-        "<h1 style='color: #888888'>Welcome to my personal website! 😊</h1>" +
+              "<hr>" +
 
-        "<p style='color: #888888; font-size: larger; line-height: 1.6;'>Hello! I’m <strong>Yuxuan Zhang</strong>, " +
-        "and I recently completed the <strong>Graduate Diploma in System Analysis</strong> at the <strong>National University of Singapore (NUS)</strong>. " +
-        "Before that, I earned my <strong>Bachelor’s degree in Intelligent Test & Control Engineering</strong> from <strong>Harbin Institute of Technology (HIT)</strong> in 2024. " +
-        "I have a strong passion for <strong>embedded systems, computer vision, robotics, and human-computer interaction</strong>, " +
-        "and I enjoy working at the intersection of hardware and software.</p>" +
+              "<p class='content-text'>Hello! I’m Yuxuan Zhang, currently a Master's student in Artificial Intelligence Systems at National University of Singapore. " +
+              "I received my Bachelor's degree in Intelligent Test & Control Engineering at Harbin Institute of Technology. </p>" +
 
-        "<p style='color: #888888; font-size: larger; line-height: 1.6;'>I’m proficient in <strong>Python, C++, Java, C, Swift, and JavaScript</strong>, and have experience with <strong>React.js, Spring Boot, SQL, Docker, AWS, and more</strong>. " +
-        "Over the years, I’ve worked on projects ranging from web and mobile applications to AI-driven embedded systems.</p>" +
+              "<p class='content-text'>I’m proficient in Python, C++, Java, C, Swift, and JavaScript, and have experience with React.js, Spring Boot, SQL, Docker, AWS, and more. " +
+              "Over the years, I’ve worked on projects ranging from web and mobile applications to AI-driven embedded systems. </p>" +
 
-        "<p style='color: #888888; font-size: larger; line-height: 1.6;'>Right now, I’m looking forward to starting my <strong>Master’s in Artificial Intelligence System</strong> this August while also preparing to apply for a <strong>PhD</strong>. " +
-        "If you’re interested in AI, robotics, or just tech in general, feel free to connect!</p>" +
-
-        "</div>";
+              "<p class='content-text'>Right now, I’m preparing to apply for a PhD in Robotics and Computer Vision. " +
+              "If you’re interested in robotics, computer vision or HCI AI, feel free to connect!</p>"
     }
     else if (page === "educations") {
-      content.innerHTML = "<div style='height: 100vh; padding: 40px; align-items: center'>" +
+      content.innerHTML = "<h1>Education</h1>" +
 
-        "<h1 style='color: #888888'>Education</h1>" +
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='education-section'>" +
-        "<h2 style='color: #888888'>Master of Technology in Artificial Intelligence Systems (Upcoming)</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>National University of Singapore</strong>, Singapore</p>" +
-        "<p style='color: #888888; font-size: large;'>Aug 2025 – May 2026</p>" +
-        "</div>" +
-        "</div>" +
+              "<h2>Master in Artificial Intelligence Systems (Upcoming)</h2>" +
+              "<p class='left-right'>" +
+                "<span>National University of Singapore</span>" +
+                "<span>Aug 2025 - Present</span>" +
+              "</p>" +
 
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='education-section'>" +
-        "<h2 style='color: #888888'>Graduate Diploma in System Analysis</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>National University of Singapore</strong>, Singapore</p>" +
-        "<p style='color: #888888; font-size: large;'>July 2023 – Feb 2025</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>GPA:</strong> 4.11/5.0</li>" +
-        "<li><strong>Coursework:</strong> .NET MVC Web Apps, Machine Learning, Java Web Apps, Android Mobile Apps, Agile Software Delivery</li>" +
-        "<li><strong>Skills:</strong> C#, .NET MVC, SQLite, GitHub, Python, Numpy, Pandas, Scikit-learn, Keras, TensorFlow, Matplotlib, Java, Spring Boot, MySQL, Android SDK, AWS, Docker</li>" +
-        "</ul>" +
-        "</div>" +
+              "<h2>Graduate Diploma in System Analysis</h2>" +
+              "<p class='left-right'>" +
+                "<span>National University of Singapore</span>" +
+                "<span>Jul 2023 - Jan 2025</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>GPA: </strong>4.11 / 5.0</li>" +
+                "<li><strong>Courses: </strong>.NET MVC Web Apps, Machine Learning, Java Web Apps, Android Mobile Apps, Agile Software Delivery</li>" +
+                "<li><strong>Skills: </strong>C#, .NET MVC, SQLite, GitHub, Python, Numpy, Pandas, Scikit-learn, Keras, TensorFlow, Matplotlib, Java, Spring Boot, MySQL, Android SDK, AWS, Docker</li>" +
+              "</ul>" +
 
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='education-section'>" +
-        "<h2 style='color: #888888'>Bachelor of Engineering in Intelligent Test & Control Engineering</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>Harbin Institute of Technology</strong>, Harbin, China</p>" +
-        "<p style='color: #888888; font-size: large;'>Sept 2020 – June 2024</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>GPA:</strong> 4.02/5.0</li>" +
-        "<li><strong>Coursework:</strong> Embedded Systems, Intelligent Sensing, AI, Digital Signal Processing, Microcontrollers</li>" +
-        "<li><strong>Skills:</strong> C, Embedded Programming, Python, AI, FPGA, Xilinx FPGA, Verilog HDL, LabVIEW, Altium Designer</li>" +
-        "</ul>" +
-        "</div>" +
+              "<h2>Bachelor in Intelligent Test & Control Engineering</h2>" +
+              "<p class='left-right'>" +
+                "<span>Harbin Institute of Technology</span>" +
+                "<span>Sep 2020 - Jun 2024</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>GPA: </strong>4.02 / 5.0</li>" +
+                "<li><strong>Courses: </strong>Embedded Systems, Intelligent Sensing, AI, Digital Signal Processing, Microcontrollers</li>" +
+                "<li><strong>Skills: </strong>C, Embedded Programming, Python, AI, FPGA, Xilinx FPGA, Verilog HDL, LabVIEW, Altium Designer</li>" +
+              "</ul>" +
 
-        "</div>";
+              "<hr>" +
+
+              "<div style='text-align: center'>" +
+                "<img class='pic' src='img/hit-logo.png' alt=''>" +
+                "<img class='pic' src='img/nus-logo.png' alt=''>" +
+              "</div>"
     }
     else if (page === "projects") {
-      content.innerHTML = "<div style='height: 100vh; padding: 40px; align-items: center'>" +
+      content.innerHTML = "<h1>Projects</h1>" +
 
-        "<h1 style='color: #888888'>Projects</h1>" +
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='project-section'>" +
-        "<h2 style='color: #888888'>Deploying Gaussian Splatting on Apple Metal</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>National University of Singapore</strong></p>" +
-        "<p style='color: #888888; font-size: large;'>Sept 2024 - Jan 2025</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>Hardware:</strong> Used OpenCV for camera distortion correction and LiDAR for initial point cloud modeling.</li>" +
-        "<li><strong>Software:</strong> Optimized Metal rendering pipeline by replacing PyTorch and OpenCV with Apple’s simd and Metal frameworks.</li>" +
-        "<li><strong>Outcome:</strong> Successfully ported Gaussian Splatting for Apple Metal, enhancing performance on Apple silicon.</li>" +
-        "<li><strong>Tools Used:</strong> Python, C++, Swift, Objective-C++</li>" +
-        "</ul>" +
-        "</div>" +
+              "<h2>Deploying Gaussian Splatting on Apple Metal</h2>" +
+              "<p class='left-right'>" +
+                "<span>National University of Singapore</span>" +
+                "<span>Sept 2024 - Jan 2025</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>Hardware:</strong> Used OpenCV for camera distortion correction and LiDAR for initial point cloud modeling.</li>" +
+                "<li><strong>Software:</strong> Optimized Metal rendering pipeline by replacing PyTorch and OpenCV with Apple’s simd and Metal frameworks.</li>" +
+                "<li><strong>Outcome:</strong> Successfully ported Gaussian Splatting for Apple Metal, enhancing performance on Apple silicon.</li>" +
+                "<li><strong>Tools Used:</strong> Python, C++, Swift, Objective-C++</li>" +
+              "</ul>" +
 
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='project-section'>" +
-        "<h2 style='color: #888888'>CamC: Multi-Platform Camera Price Comparison & Prediction</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>National University of Singapore</strong></p>" +
-        "<p style='color: #888888; font-size: large;'>June 2024 - Aug 2024</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>Backend:</strong> Developed a Spring Boot REST API with MySQL for data storage and JSON data exchange.</li>" +
-        "<li><strong>Frontend:</strong> Built a React.js web app and an Android SDK-based mobile app.</li>" +
-        "<li><strong>ML:</strong> Implemented hierarchical clustering for camera categorization and SVM for price prediction.</li>" +
-        "<li><strong>Tools Used:</strong> MySQL, Docker, AWS, Java, React.js, JSON, Android SDK</li>" +
-        "</ul>" +
-        "</div>" +
-
-        "</div>";
+              "<h2>CamC: Multi-Platform Camera Price Comparison & Prediction</h2>" +
+              "<p class='left-right'>" +
+                "<span>National University of Singapore</span></p>" +
+                "<span>June 2024 - Aug 2024</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>Backend:</strong> Developed a Spring Boot REST API with MySQL for data storage and JSON data exchange.</li>" +
+                "<li><strong>Frontend:</strong> Built a React.js web app and an Android SDK-based mobile app.</li>" +
+                "<li><strong>ML:</strong> Implemented hierarchical clustering for camera categorization and SVM for price prediction.</li>" +
+                "<li><strong>Tools Used:</strong> MySQL, Docker, AWS, Java, React.js, JSON, Android SDK</li>" +
+              "</ul>"
     }
     else if (page === "works") {
-      content.innerHTML = "<div style='height: 100vh; padding: 40px; align-items: center'>" +
+      content.innerHTML = "<h1>Work Experience</h1>" +
 
-        "<h1 style='color: #888888'>Work Experience</h1>" +
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='work-section'>" +
-        "<h2 style='color: #888888'>R&D Intern - Automated Rust Removal System</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>Changjiang Intelligent Control Technology Group (Wuhan) Co., LTD.</strong>, Wuhan, China</p>" +
-        "<p style='color: #888888; font-size: large;'>July 2021 – Aug 2021</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>Hardware:</strong> Designed a stereo vision system for 3D point cloud modeling, integrated with a robotic arm for rust removal.</li>" +
-        "<li><strong>Software:</strong> Developed an OpenCV-based image alignment system and a PCL-based 3D model processing framework.</li>" +
-        "<li><strong>Outcome:</strong> Automated the steel rust removal process, increasing efficiency and reducing human intervention.</li>" +
-        "<li><strong>Tools Used:</strong> OpenCV, PCL, A* Path Planning, Python</li>" +
-        "</ul>" +
-        "</div>" +
+              "<h2>R&D Intern - Automated Rust Removal System</h2>" +
+              "<p class='left-right'>" +
+                "<span>Changjiang Intelligent Control Technology Group (Wuhan) Co., LTD.,<br> Wuhan, China</span>" +
+                "<span>July 2021 – Aug 2021</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>Hardware:</strong> Designed a stereo vision system for 3D point cloud modeling, integrated with a robotic arm for rust removal.</li>" +
+                "<li><strong>Software:</strong> Developed an OpenCV-based image alignment system and a PCL-based 3D model processing framework.</li>" +
+                "<li><strong>Outcome:</strong> Automated the steel rust removal process, increasing efficiency and reducing human intervention.</li>" +
+                "<li><strong>Tools Used:</strong> OpenCV, PCL, A* Path Planning, Python</li>" +
+              "</ul>" +
 
-        "<hr />" +
+              "<hr>" +
 
-        "<div class='work-section'>" +
-        "<h2 style='color: #888888'>Game Effects Intern</h2>" +
-        "<div class='d-flex justify-content-between'>" +
-        "<p style='color: #888888; font-size: large;'><strong>Boke Technology Group (Wuhan) Co., LTD.</strong>, Wuhan, China</p>" +
-        "<p style='color: #888888; font-size: large;'>Jan 2021 – Feb 2021</p>" +
-        "</div>" +
-        "<ul style='color: #888888; font-size: large; line-height: 1.6;'>" +
-        "<li><strong>Software:</strong> Developed C# scripts in Unity for custom shaders and basic user interaction.</li>" +
-        "<li><strong>Other:</strong> Created game effects using Unity’s particle system, keyframe animations in Photoshop, and 3D models in Blender.</li>" +
-        "<li><strong>Outcome:</strong> Gained experience in game effect production, working with both 2D and 3D elements.</li>" +
-        "<li><strong>Tools Used:</strong> Unity, C#, Photoshop, Blender</li>" +
-        "</ul>" +
-        "</div>" +
-
-        "</div>";
+              "<h2>Game Effects Intern</h2>" +
+              "<p class='left-right'>" +
+                "<span>Boke Technology Group (Wuhan) Co., LTD., Wuhan, China</span>" +
+                "<span style='color: #888888; font-size: large;'>Jan 2021 – Feb 2021</span>" +
+              "</p>" +
+              "<ul class='content-text'>" +
+                "<li><strong>Software:</strong> Developed C# scripts in Unity for custom shaders and basic user interaction.</li>" +
+                "<li><strong>Other:</strong> Created game effects using Unity’s particle system, keyframe animations in Photoshop, and 3D models in Blender.</li>" +
+                "<li><strong>Outcome:</strong> Gained experience in game effect production, working with both 2D and 3D elements.</li>" +
+                "<li><strong>Tools Used:</strong> Unity, C#, Photoshop, Blender</li>" +
+              "</ul>"
     }
     else if (page === "about") {
-      content.innerHTML = "<div style='height: 100vh; padding: 40px; align-items: center'>" +
+      content.innerHTML = "<h1>About</h1>" +
 
-        "<h1 style='color: #888888'>About</h1>" +
-        "<hr />" +
-
-        "</div>";
+              "<hr>";
     }
   }
 
