@@ -68,6 +68,46 @@ ul li {
   overflow-y: auto;
 }
 
+#content hr {
+  margin: 10px 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 40%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+#pic1 {
+  float: right;
+  width: 300px;
+  aspect-ratio: initial;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  /*border: 2px solid rgba(0, 0, 0, 0.5);*/
+  border-radius:10px;
+}
+
+#pic2 {
+  float: right;
+  width: 500px;
+  aspect-ratio: initial;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  /*border: 2px solid rgba(0, 0, 0, 0.5);*/
+  border-radius:10px;
+}
+
+.pic34 {
+  height: 220px;
+  aspect-ratio: initial;
+  padding: 5px 10px;
+  margin-top: 5px;
+  margin-left: 5px;
+  /*border: 2px solid rgba(0, 0, 0, 0.5);*/
+  border-radius:10px;
+}
+
 .name {
   font-size: 40px;
 }
@@ -80,7 +120,7 @@ ul li {
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius:10px;
   white-space: nowrap;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .sub-title {
@@ -99,7 +139,7 @@ ul li {
   line-height: 1.6;
 }
 
-.pic {
+.logo {
   height: 50px;
   aspect-ratio: initial;
   padding: 5px 10px;
@@ -108,3 +148,5 @@ ul li {
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius:10px;
 }
+
+
