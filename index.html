@@ -4,383 +4,452 @@
   <head>
     <title>Yuxuan Zhang's Homepage</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/app.js" defer></script>
     <meta charset="UTF-8" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/app.js" defer></script>
   </head>
 
   <body>
-    <div id="menubar">
-      <a class="navigation" href="#home">home</a>
-      <a class="navigation" href="#education">education</a>
-      <a class="navigation" href="#publications">publications</a>
-      <a class="navigation" href="#projects">projects & experience</a>
-      <a class="navigation" href="#skills">skills</a>
-      <a class="navigation" href="#about">about</a>
-    </div>
-
-    <div id="top">
-      <a class="navigation" href="#home">back to top</a>
-    </div>
-
-    <section id="home">
-      <div class="split-line">
-        <span class="left" style="padding-right: 20px;">
-          <h1>welcome to my homepage! 👋😃</h1>
-          <p><span class="bubble">Hi, </span>my name is Yuxuan Zhang, currently
-            pursuing a Master's
-            degree in Artificial Intelligence at National University of
-            Singapore.</p>
-          <p>Email: <a
-              href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu</a></p>
-          <p>Contact: <a href="tel:+6589416785">(+65) 8941 6785</a></p>
-          <p>Address: Varsity Park Condominium, 28 West Coast Road, Singapore
-            127449</p>
-        </span>
-        <span class="right">
-          <img id="profile" src="img/profile.jpeg" alt />
-        </span>
+    <div id="content">
+      <div id="menubar">
+        <a class="navigation" href="#home">home</a>
+        <a class="navigation" href="#education">education</a>
+        <a class="navigation" href="#publications">publications</a>
+        <a class="navigation" href="#projects">projects & experience</a>
+        <a class="navigation" href="#skills">skills</a>
+        <a class="navigation" href="#about">about</a>
       </div>
-    </section>
 
-    <section id="education">
-      <h1>education</h1>
+      <div id="top">
+        <a class="navigation" href="#home">back to top</a>
+      </div>
 
-      <div class="card">
+      <section id="home">
         <div class="split-line">
-          <span class="left"><h3>MTech in Artificial Intelligence
-              Systems</h3></span>
-          <span class="right">August 2025 - Present</span>
+          <span class="left" style="padding-right: 20px;">
+            <h1>welcome to my homepage! 👋😃</h1>
+            <p><span class="bubble">Hi, </span>my name is Yuxuan Zhang,
+              currently pursuing a Master's degree in Artificial Intelligence at
+              National University of Singapore.</p>
+            <p>📧 Email: <a
+                href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu</a></p>
+            <p>☎️ Contact: <a href="tel:+6589416785">(+65) 8941 6785</a></p>
+            <p>🏠 Address: Varsity Park Condominium, 28 West Coast Road,
+              Singapore 127449</p>
+          </span>
+          <span class="right">
+            <img id="profile" src="img/profile.jpeg" alt />
+          </span>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">National University of Singapore</span>
-          <span class="right">Singapore</span>
-        </div>
-        <ul></ul>
-      </div>
+      </section>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>Graduate Diploma in System Analysis</h3></span>
-          <span class="right">July 2023 - January 2025</span>
-        </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">National University of Singapore</span>
-          <span class="right">Singapore</span>
-        </div>
-        <ul>
-          <li><strong>GPA: </strong>4.11 / 5.0</li>
-          <li><strong>Courses: </strong>.NET MVC Web Apps, Machine Learning,
-            Java Web Apps, Android Mobile Apps, Agile Software Delivery</li>
-          <li><strong>Skills: </strong>C#, .NET MVC, SQLite,
-            GitHub, Python, Numpy, Pandas, Scikit-learn, Keras, TensorFlow,
-            Matplotlib, Java, Spring Boot, MySQL, Android SDK, AWS, Docker</li>
-        </ul>
-      </div>
+      <section id="education">
+        <h1>education</h1>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>BE in Intelligent Test & Control
-              Systems</h3></span>
-          <span class="right">September 2020 - June 2024</span>
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>MTech in Artificial Intelligence
+                Systems</h3></span>
+            <span class="right">August 2025 - Present</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">National University of Singapore</span>
+            <span class="right">Singapore</span>
+          </div>
+          <ul></ul>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">Harbin Institue of Technology</span>
-          <span class="right">Harbin, Heilongjiang, China</span>
+
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>Graduate Diploma in System
+                Analysis</h3></span>
+            <span class="right">July 2023 - January 2025</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">National University of Singapore</span>
+            <span class="right">Singapore</span>
+          </div>
+          <ul>
+            <li><strong>GPA: </strong>4.11 / 5.0</li>
+            <li><strong>Courses: </strong>.NET MVC Web Apps, Machine Learning,
+              Java Web Apps, Android Mobile Apps, Agile Software Delivery</li>
+            <li><strong>Skills: </strong>C#, .NET MVC, SQLite,
+              GitHub, Python, Numpy, Pandas, Scikit-learn, Keras, TensorFlow,
+              Matplotlib, Java, Spring Boot, MySQL, Android SDK, AWS,
+              Docker</li>
+          </ul>
         </div>
-        <ul>
-          <li><strong>GPA: </strong>4.02 / 5.0</li>
-          <li><strong>Courses: </strong>Embedded Systems, Intelligent Sensing,
-            AI, Digital Signal Processing, Microcontrollers</li>
-          <li><strong>Skills: </strong>C, Embedded Programming, Python, AI,
-            FPGA, Xilinx FPGA, Verilog HDL, LabVIEW, Altium Designer</li>
-        </ul>
-      </div>
-    </section>
 
-    <section id="publications">
-      <h1>publications</h1>
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>BE in Intelligent Test & Control
+                Systems</h3></span>
+            <span class="right">September 2020 - June 2024</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">Harbin Institue of Technology</span>
+            <span class="right">Harbin, Heilongjiang, China</span>
+          </div>
+          <ul>
+            <li><strong>GPA: </strong>4.02 / 5.0</li>
+            <li><strong>Courses: </strong>Embedded Systems, Intelligent Sensing,
+              AI, Digital Signal Processing, Microcontrollers</li>
+            <li><strong>Skills: </strong>C, Embedded Programming, Python, AI,
+              FPGA, Xilinx FPGA, Verilog HDL, LabVIEW, Altium Designer</li>
+          </ul>
+        </div>
+      </section>
 
-      <div class="tumbleweed-container">
-        <div class="desert">
-          <div class="wrap-tumbleweed">
-            <div class="tumbleweed top">
-              <div class="tumbleweed__details"></div>
-              <div class="tumbleweed__details2"></div>
-              <div class="tumbleweed__details3"></div>
-              <div class="tumbleweed__details4"></div>
-              <div class="tumbleweed__details5"></div>
-              <div class="tumbleweed__details6"></div>
-              <div class="tumbleweed__details7"></div>
-              <div class="tumbleweed__details8"></div>
+      <section id="publications">
+        <h1>publications</h1>
+
+        <div class="tumbleweed-container">
+          <div class="desert">
+            <div class="wrap-tumbleweed">
+              <div class="tumbleweed top">
+                <div class="tumbleweed__details"></div>
+                <div class="tumbleweed__details2"></div>
+                <div class="tumbleweed__details3"></div>
+                <div class="tumbleweed__details4"></div>
+                <div class="tumbleweed__details5"></div>
+                <div class="tumbleweed__details6"></div>
+                <div class="tumbleweed__details7"></div>
+                <div class="tumbleweed__details8"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <p>To be continued... 🥲</p>
-    </section>
+        <p>To be continued... 🥲</p>
+      </section>
 
-    <section id="projects">
-      <h1>projects & experience</h1>
+      <section id="projects">
+        <h1>projects & experience</h1>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>Deploying Gaussian Splatting on Apple
-              Metal</h3></span>
-          <span class="right">September 2024 - January 2025</span>
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>Deploying Gaussian Splatting on Apple
+                Metal</h3></span>
+            <span class="right">September 2024 - January 2025</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">National University of Singapore</span>
+            <span class="right">Singapore</span>
+          </div>
+          <ul>
+            <li><strong>Hardware:</strong> Used OpenCV for camera distortion
+              correction and LiDAR for initial point cloud modeling.</li>
+            <li><strong>Software:</strong> Optimized Metal rendering pipeline by
+              replacing PyTorch and OpenCV with Apple’s simd and Metal
+              frameworks.</li>
+            <li><strong>Outcome:</strong> Successfully ported Gaussian Splatting
+              for Apple Metal, enhancing performance on Apple silicon.</li>
+            <li><strong>Tools Used:</strong> Python, C++, Swift,
+              Objective-C++</li>
+          </ul>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">National University of Singapore</span>
-          <span class="right">Singapore</span>
+
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>CamC: Multi-Platform Camera Price Comparison
+                &
+                Prediction</h3></span>
+            <span class="right">June 2024 - August 2024</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">National University of Singapore</span>
+            <span class="right">Singapore</span>
+          </div>
+          <ul>
+            <li><strong>Backend:</strong> Developed a Spring Boot REST API with
+              MySQL for data storage and JSON data exchange.</li>
+            <li><strong>Frontend:</strong> Built a React.js web app and an
+              Android
+              SDK-based mobile app.</li>
+            <li><strong>ML:</strong> Implemented hierarchical clustering for
+              camera categorization and SVM for price prediction.</li>
+            <li><strong>Tools Used:</strong> MySQL, Docker, AWS, Java, React.js,
+              JSON, Android SDK</li>
+          </ul>
         </div>
-        <ul>
-          <li><strong>Hardware:</strong> Used OpenCV for camera distortion
-            correction and LiDAR for initial point cloud modeling.</li>
-          <li><strong>Software:</strong> Optimized Metal rendering pipeline by
-            replacing PyTorch and OpenCV with Apple’s simd and Metal
-            frameworks.</li>
-          <li><strong>Outcome:</strong> Successfully ported Gaussian Splatting
-            for Apple Metal, enhancing performance on Apple silicon.</li>
-          <li><strong>Tools Used:</strong> Python, C++, Swift,
-            Objective-C++</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>CamC: Multi-Platform Camera Price Comparison &
-              Prediction</h3></span>
-          <span class="right">June 2024 - August 2024</span>
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>LAPS: Leave Application & Processing
+                System</h3></span>
+            <span class="right">May 2024 - June 2024</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">National University of Singapore</span>
+            <span class="right">Singapore</span>
+          </div>
+          <ul>
+            <li><strong>Software:</strong> Developed a Java-based web
+              application
+              with MySQL as the backend database.</li>
+            <li><strong>Outcome:</strong> Built a leave application and approval
+              system.</li>
+            <li><strong>Tools Used:</strong> Java, MySQL, Spring Boot</li>
+          </ul>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">National University of Singapore</span>
-          <span class="right">Singapore</span>
+
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>Automated Calibration System for A/D
+                Modules</h3></span>
+            <span class="right">October 2023 - May 2024</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">Harbin Institute of Technology</span>
+            <span class="right">Harbin, Heilongjiang, China</span>
+          </div>
+          <ul>
+            <li><strong>Hardware:</strong> Designed a 16-channel line selection
+              module using a microcontroller, integrated with PXI chassis and a
+              Fluke 5500A calibration source for high-precision voltage
+              output.</li>
+            <li><strong>Software:</strong> Implemented calibration source
+              control
+              and data fitting algorithms in LabVIEW, and developed C-based
+              firmware for line selection.</li>
+            <li><strong>Outcome:</strong> Achieved automated A/D module
+              calibration, significantly improving efficiency and reducing
+              calibration error to 0.001V.</li>
+            <li><strong>Tools Used:</strong> C, Altium Desinger, PCB, Circuit
+              Design, Embedded Programming, LabVIEW, Virtual Instruments, PXI,
+              RS232</li>
+          </ul>
         </div>
-        <ul>
-          <li><strong>Backend:</strong> Developed a Spring Boot REST API with
-            MySQL for data storage and JSON data exchange.</li>
-          <li><strong>Frontend:</strong> Built a React.js web app and an Android
-            SDK-based mobile app.</li>
-          <li><strong>ML:</strong> Implemented hierarchical clustering for
-            camera categorization and SVM for price prediction.</li>
-          <li><strong>Tools Used:</strong> MySQL, Docker, AWS, Java, React.js,
-            JSON, Android SDK</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>LAPS: Leave Application & Processing
-              System</h3></span>
-          <span class="right">May 2024 - June 2024</span>
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>Automated Testing System for Signal
+                Conditioning Circuits</h3></span>
+            <span class="right">August 2023 - September 2023</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">Harbin Institute of Technology</span>
+            <span class="right">Harbin, Heilongjiang, China</span>
+          </div>
+          <ul>
+            <li><strong>Hardware:</strong> Developed an automated testing setup
+              for signal conditioning circuits using a digital multimeter (RIGOL
+              DM3058) and programmable power supply.</li>
+            <li><strong>Software:</strong> Designed and implemented
+              LabVIEW-based
+              automation for performance testing, including voltage gain and
+              stability measurements. Developed C-based firmware for instrument
+              communication.</li>
+            <li><strong>Outcome:</strong> Enhanced testing efficiency by
+              integrating instrument automation, reducing measurement errors and
+              improving testing reproducibility.</li>
+            <li><strong>Tools Used:</strong> LabVIEW, C, NI myDAQ, RIGOL DM3058,
+              Multisim, Automated Testing, Embedded Programming</li>
+          </ul>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">National University of Singapore</span>
-          <span class="right">Singapore</span>
+
+        <div class="card">
+          <div class="split-line">
+            <span class="left"><h3>Semi-Automated Drone Docking and Charging
+                Platform</h3></span>
+            <span class="right">October 2021 - September 2022</span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left">Harbin Institute of Technology</span>
+            <span class="right">Harbin, Heilongjiang, China</span>
+          </div>
+          <ul>
+            <li><strong>Hardware:</strong> Integrated DJI Matrice 100 with
+              Manifold 2-C onboard computer, OpenMV camera for marker detection,
+              and wireless charging modules for power transfer.</li>
+            <li><strong>Software:</strong> Developed a Linux-based system with
+              DJI
+              OnboardSDK and ROS, to enable autonomous flight control and
+              marker-guided landing.</li>
+            <li><strong>Outcome:</strong> Implemented autonomous drone docking,
+              landing, and charging, reducing manual intervention and enhancing
+              operational efficiency.</li>
+            <li><strong>Tools Used:</strong> Linux, ROS, Ubuntu, Python, OpenMV,
+              C++, DJI OnboardSDK</li>
+          </ul>
         </div>
-        <ul>
-          <li><strong>Software:</strong> Developed a Java-based web application
-            with MySQL as the backend database.</li>
-          <li><strong>Outcome:</strong> Built a leave application and approval
-            system.</li>
-          <li><strong>Tools Used:</strong> Java, MySQL, Spring Boot</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>Automated Calibration System for A/D
-              Modules</h3></span>
-          <span class="right">October 2023 - May 2024</span>
+        <!-- <div class="card">
+          <div class="split-line">
+            <span class="left"><h3></h3></span>
+            <span class="right"></span>
+          </div>
+          <div class="split-line"
+            style="font-weight: normal; font-style: italic;">
+            <span class="left"></span>
+            <span class="right"></span>
+          </div>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div> -->
+
+        <div class="gallery" id="gallery1">
+          <ul class="cards">
+            <li>
+              <img class="pic" src="img/projects/Picture1.png" alt>
+              <p>Human-Behaviour Understanding in <br> Collaborative Task-Based
+                Settings</p>
+            </li>
+            <li>
+              <img class="pic" src="img/projects/Picture2.png" alt>
+              <p>CamC: Multi-Platform Camera Price Comparison & Prediction</p>
+            </li>
+            <li>
+              <img class="pic" src="img/projects/Picture3.png" alt>
+              <p>Automated Calibration System for A/D Modules</p>
+            </li>
+            <li>
+              <img class="pic" src="img/projects/Picture4.png" alt>
+              <p>Semi-Automated Drone Docking & Charging Platform</p>
+            </li>
+          </ul>
+          <div class="actions">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+          </div>
         </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">Harbin Institute of Technology</span>
-          <span class="right">Harbin, Heilongjiang, China</span>
+      </section>
+
+      <section id="skills">
+        <h1>skills</h1>
+
+        <p>Programming Languages</p>
+
+        <span class="skill" data-detail="Embedded Programming">C</span>
+        <span class="skill"
+          data-detail="Computer Vision and Robotics">C++</span>
+        <span class="skill"
+          data-detail="Web Development (ASP.NET), Game Development (Unity Engine), AR/VR Development (via Unity)">C#</span>
+        <span class="skill"
+          data-detail="Web Development (Flask), Data Science and Analytics, Machine Learning and Deep Learning, Scripting and Automation, Artificial Intelligence, Scientific Computing (NumPy, SciPy), Natural Language Processing">Python</span>
+        <span class="skill"
+          data-detail="Enterprise Application Development (Spring), Web Development (Backend Services), Android App Development, Cloud-Native Development (Spring Boot + Cloud Platforms), APIs and Middleware Services">Java</span>
+        <span class="skill"
+          data-detail="Web Frontend Development (HTML/CSS/JS), Single-Page Applications (React)">JavaScript</span>
+        <span class="skill"
+          data-detail="Web Page Structure and Styling, Responsive Web Design, Web UI/UX Prototyping, Single-Page Application Layouts, ">HTML/CSS</span>
+        <span class="skill"
+          data-detail="iOS App Development (iPhone, iPad), macOS Application Development, Mobile Game Development (with RealityKit), AR/VR Development (ARKit with Swift)">Swift</span>
+        <span class="skill"
+          data-detail="Signal and Image Processing, Data Analysis and Visualization">MATLAB</span>
+        <span class="skill"
+          data-detail="Digital Circuit Design, FPGA Development (Field-Programmable Gate Arrays), SoC Design (System on Chip)">Verilog
+          HDL</span>
+        <span class="skill"
+          data-detail="Scientific and Technical Writing, Mathematical and Symbolic Typesetting, Curriculum Vitae (CV) and Résumé Design">LaTeX</span>
+
+        <p>Libraries & Frameworks</p>
+
+        <span class="other-skill">TensorFlow</span>
+        <span class="other-skill">PyTorch</span>
+        <span class="other-skill">Scikit-learn</span>
+        <span class="other-skill">Keras</span>
+        <span class="other-skill">Pandas</span>
+        <span class="other-skill">Numpy</span>
+        <span class="other-skill">Matplotlib</span>
+        <span class="other-skill">React.js</span>
+        <span class="other-skill">Spring Boot</span>
+        <span class="other-skill">SwiftUI</span>
+        <span class="skill"
+          data-detail="Application Containerization, Cloud-Native Application Development, Lightweight Virtualization and Isolation, Scalable Service Deployment (with Docker Compose / Swarm / Kubernetes)">Docker</span>
+        <span class="skill"
+          data-detail="Platform as a Service (PaaS) for Web and App Hosting">AWS</span>
+        <span class="other-skill">Azure</span>
+
+        <p>Databases</p>
+
+        <span class="other-skill">MySQL</span>
+        <span class="other-skill">SQLite</span>
+
+        <p>Tools</p>
+
+        <span class="skill" ,
+          data-detail="Version Control and Source Code Management (Git), Collaborative Software Development, Open Source Project Hosting, CI/CD Automation (via GitHub Actions), DevOps Workflow Integration, Documentation Hosting (README, Wikis, GitHub Pages), Code Review and Pull Request Workflows">Github</span>
+        <span class="skill"
+          data-detail="Application Containerization, Cloud-Native Application Development, Lightweight Virtualization and Isolation, Scalable Service Deployment (with Docker Compose / Swarm / Kubernetes)">Docker</span>
+        <span class="other-skill">Visual Studio</span>
+        <span class="other-skill">VSCode</span>
+        <span class="other-skill">XCode</span>
+        <span class="other-skill">Intellij IDEA</span>
+        <span class="other-skill">PyCharm</span>
+        <span class="other-skill">CLion</span>
+        <span class="other-skill">DataGrip</span>
+        <span class="other-skill">Android Studio</span>
+        <span class="other-skill">MATLAB</span>
+        <span class="skill"
+          data-detail="Automated Test and Measurement Systems, Instrument Control (GPIB, VISA, SCPI), Signal Processing and Analysis">LabVIEW</span>
+        <span class="skill"
+          data-detail="PCB Design (Printed Circuit Board Design), Embedded System Hardware Design">Altium
+          Designer</span>
+        <span class="skill"
+          data-detail="User Interface (UI) Design, User Experience (UX) Design, Web and Mobile App Prototyping">Figma</span>
+        <span class="skill"
+          data-detail="2D Drafting and Technical Drawing, 3D Modeling and Visualization, Electrical and Electronics Schematic Design">AutoCAD</span>
+        <span class="skill"
+          data-detail="2D/3D Game Development, Virtual Reality (VR) Applications">Unity</span>
+        <span class="other-skill">Blender</span>
+        <span class="other-skill">Photoshop</span>
+        <span class="other-skill">Premiere</span>
+        <span class="other-skill">Microsoft 365</span>
+
+        <p>Languages</p>
+
+        <span class="skill" data-detail="Native">Chinese</span>
+        <span class="skill" data-detail="Fluent, IELTS 7.0">English</span>
+      </section>
+
+      <section id="about">
+        <h1>about</h1>
+
+        <p>Beyond school and lab, I'd like to travel and take photos 📸. </p>
+        <div class="gallery" id="gallery2">
+          <ul class="cards">
+            <li><img class="photo" src="img/photos/1.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/2.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/3.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/4.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/5.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/6.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/7.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/8.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/9.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/10.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/11.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/12.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/13.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/14.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/15.jpeg" alt></li>
+            <li><img class="photo" src="img/photos/16.jpeg" alt></li>
+          </ul>
+          <div class="actions">
+            <span class="prev">prev</span>
+            <span class="next">next</span>
+          </div>
         </div>
-        <ul>
-          <li><strong>Hardware:</strong> Designed a 16-channel line selection
-            module using a microcontroller, integrated with PXI chassis and a
-            Fluke 5500A calibration source for high-precision voltage
-            output.</li>
-          <li><strong>Software:</strong> Implemented calibration source control
-            and data fitting algorithms in LabVIEW, and developed C-based
-            firmware for line selection.</li>
-          <li><strong>Outcome:</strong> Achieved automated A/D module
-            calibration, significantly improving efficiency and reducing
-            calibration error to 0.001V.</li>
-          <li><strong>Tools Used:</strong> C, Altium Desinger, PCB, Circuit
-            Design, Embedded Programming, LabVIEW, Virtual Instruments, PXI,
-            RS232</li>
-        </ul>
-      </div>
 
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>Automated Testing System for Signal
-              Conditioning Circuits</h3></span>
-          <span class="right">August 2023 - September 2023</span>
-        </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">Harbin Institute of Technology</span>
-          <span class="right">Harbin, Heilongjiang, China</span>
-        </div>
-        <ul>
-          <li><strong>Hardware:</strong> Developed an automated testing setup
-            for signal conditioning circuits using a digital multimeter (RIGOL
-            DM3058) and programmable power supply.</li>
-          <li><strong>Software:</strong> Designed and implemented LabVIEW-based
-            automation for performance testing, including voltage gain and
-            stability measurements. Developed C-based firmware for instrument
-            communication.</li>
-          <li><strong>Outcome:</strong> Enhanced testing efficiency by
-            integrating instrument automation, reducing measurement errors and
-            improving testing reproducibility.</li>
-          <li><strong>Tools Used:</strong> LabVIEW, C, NI myDAQ, RIGOL DM3058,
-            Multisim, Automated Testing, Embedded Programming</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="split-line">
-          <span class="left"><h3>Semi-Automated Drone Docking and Charging
-              Platform</h3></span>
-          <span class="right">October 2021 - September 2022</span>
-        </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left">Harbin Institute of Technology</span>
-          <span class="right">Harbin, Heilongjiang, China</span>
-        </div>
-        <ul>
-          <li><strong>Hardware:</strong> Integrated DJI Matrice 100 with
-            Manifold 2-C onboard computer, OpenMV camera for marker detection,
-            and wireless charging modules for power transfer.</li>
-          <li><strong>Software:</strong> Developed a Linux-based system with DJI
-            OnboardSDK and ROS, to enable autonomous flight control and
-            marker-guided landing.</li>
-          <li><strong>Outcome:</strong> Implemented autonomous drone docking,
-            landing, and charging, reducing manual intervention and enhancing
-            operational efficiency.</li>
-          <li><strong>Tools Used:</strong> Linux, ROS, Ubuntu, Python, OpenMV,
-            C++, DJI OnboardSDK</li>
-        </ul>
-      </div>
-
-      <!-- <div class="card">
-        <div class="split-line">
-          <span class="left"><h3></h3></span>
-          <span class="right"></span>
-        </div>
-        <div class="split-line"
-          style="font-weight: normal; font-style: italic;">
-          <span class="left"></span>
-          <span class="right"></span>
-        </div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div> -->
-    </section>
-
-    <section id="skills">
-      <h1>skills</h1>
-
-      <span class="skill" data-detail="Embedded Programming">C</span>
-      <span class="skill" data-detail="Computer Vision and Robotics">C++</span>
-      <span class="skill"
-        data-detail="Web Development (ASP.NET), Game Development (Unity Engine), AR/VR Development (via Unity)">C#</span>
-      <span class="skill"
-        data-detail="Web Development (Flask), Data Science and Analytics, Machine Learning and Deep Learning, Scripting and Automation, Artificial Intelligence, Scientific Computing (NumPy, SciPy), Natural Language Processing">Python</span>
-      <span class="skill"
-        data-detail="Enterprise Application Development (Spring), Web Development (Backend Services), Android App Development, Cloud-Native Development (Spring Boot + Cloud Platforms), APIs and Middleware Services">Java</span>
-      <span class="skill"
-        data-detail="Web Frontend Development (HTML/CSS/JS), Single-Page Applications (React)">JavaScript</span>
-      <span class="skill"
-        data-detail="Web Page Structure and Styling, Responsive Web Design, Web UI/UX Prototyping, Single-Page Application Layouts, ">HTML/CSS</span>
-      <span class="skill"
-        data-detail="iOS App Development (iPhone, iPad), macOS Application Development, Mobile Game Development (with RealityKit), AR/VR Development (ARKit with Swift)">Swift</span>
-      <span class="skill"
-        data-detail="Signal and Image Processing, Data Analysis and Visualization">MATLAB</span>
-      <span class="skill"
-        data-detail="Digital Circuit Design, FPGA Development (Field-Programmable Gate Arrays), SoC Design (System on Chip)">Verilog
-        HDL</span>
-      <span class="skill"
-        data-detail="Scientific and Technical Writing, Mathematical and Symbolic Typesetting, Curriculum Vitae (CV) and Résumé Design">LaTeX</span>
-
-      <p></p>
-
-      <span class="other-skill">TensorFlow</span>
-      <span class="other-skill">PyTorch</span>
-      <span class="other-skill">Scikit-learn</span>
-      <span class="other-skill">Keras</span>
-      <span class="other-skill">Pandas</span>
-      <span class="other-skill">Numpy</span>
-      <span class="other-skill">Matplotlib</span>
-      <span class="other-skill">React.js</span>
-      <span class="other-skill">Spring Boot</span>
-      <span class="other-skill">SwiftUI</span>
-      <span class="skill"
-        data-detail="Application Containerization, Cloud-Native Application Development, Lightweight Virtualization and Isolation, Scalable Service Deployment (with Docker Compose / Swarm / Kubernetes)">Docker</span>
-      <span class="skill"
-        data-detail="Platform as a Service (PaaS) for Web and App Hosting">AWS</span>
-      <span class="other-skill">Azure</span>
-
-      <p></p>
-
-      <span class="other-skill">MySQL</span>
-      <span class="other-skill">SQLite</span>
-
-      <p></p>
-
-      <span class="skill" ,
-        data-detail="Version Control and Source Code Management (Git), Collaborative Software Development, Open Source Project Hosting, CI/CD Automation (via GitHub Actions), DevOps Workflow Integration, Documentation Hosting (README, Wikis, GitHub Pages), Code Review and Pull Request Workflows">Github</span>
-      <span class="skill"
-        data-detail="Application Containerization, Cloud-Native Application Development, Lightweight Virtualization and Isolation, Scalable Service Deployment (with Docker Compose / Swarm / Kubernetes)">Docker</span>
-      <span class="other-skill">Visual Studio</span>
-      <span class="other-skill">VSCode</span>
-      <span class="other-skill">XCode</span>
-      <span class="other-skill">Intellij IDEA</span>
-      <span class="other-skill">PyCharm</span>
-      <span class="other-skill">CLion</span>
-      <span class="other-skill">DataGrip</span>
-      <span class="other-skill">Android Studio</span>
-      <span class="other-skill">MATLAB</span>
-      <span class="skill"
-        data-detail="Automated Test and Measurement Systems, Instrument Control (GPIB, VISA, SCPI), Signal Processing and Analysis">LabVIEW</span>
-      <span class="skill"
-        data-detail="PCB Design (Printed Circuit Board Design), Embedded System Hardware Design">Altium
-        Designer</span>
-      <span class="skill"
-        data-detail="User Interface (UI) Design, User Experience (UX) Design, Web and Mobile App Prototyping">Figma</span>
-      <span class="skill"
-        data-detail="2D Drafting and Technical Drawing, 3D Modeling and Visualization, Electrical and Electronics Schematic Design">AutoCAD</span>
-      <span class="skill"
-        data-detail="2D/3D Game Development, Virtual Reality (VR) Applications">Unity</span>
-      <span class="other-skill">Blender</span>
-      <span class="other-skill">Photoshop</span>
-      <span class="other-skill">Premiere</span>
-      <span class="other-skill">Microsoft 365</span>
-
-      <p></p>
-
-      <span class="skill" data-detail="Native">Chinese</span>
-      <span class="skill" data-detail="Fluent, IELTS 7.0">English</span>
-    </section>
-
-    <section id="about">
-      <h1>about</h1>
-      <p>In my leisure time, I'd like to take photos 📷, play guitar 🎸,
-        play basketball 🏀, go to gym 💪 and swim 🏊. </p>
-    </section>
+        <p>Also keen on playing guitar 🎸, basketball🏀 and swimming 🏊. </p>
+      </section>
+    </div>
   </body>
