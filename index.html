@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="_css/index.css">
+        <title>Yuxuan Zhang's Homepage</title>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li id="homepage"><a href="#home">Yuxuan Zhang's Homepage</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#cv">CV</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="layout">
+            <aside>
+                <img src="_images/profile_photo.png" alt="Profile Picture">
+                <div id="name">Yuxuan Zhang</div>
+                <div>Master Student @ NUS</div>
+                <div class="links">
+                    <a href="https://github.com/yuxuanzhang271">GitHub</a>
+                    <a href="https://linkedin.com/in/yuxuanzhang271">LinkedIn</a>
+                </div>
+            </aside>
+
+            <main>
+                <section id="content"></section>
+            </main>
+        </div>
+
+        <footer>
+            Yuxuan Zhang's Homepage
+        </footer>
+
+        <script>
+            function loadContentFromHash() {
+                const defaultPage = 'home';
+                const hash = window.location.hash.slice(1);
+                const name = hash || defaultPage;
+
+                fetch(`${name}.html`)
+                .then(r => r.text())
+                .then(html => {
+                    document.getElementById('content').innerHTML = html;
+                })
+                .catch(() => {
+                    document.getElementById('content').innerHTML = '<p>Content not found.</p>';
+                });
+            }
+
+            loadContentFromHash();
+
+            window.addEventListener('hashchange', loadContentFromHash);
+        </script>
+    </body>
+</html>
