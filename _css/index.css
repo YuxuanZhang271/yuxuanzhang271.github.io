@@ -39,7 +39,6 @@ nav #homepage {
 
 .layout {
     display: flex;
-    height: 100vh;
 }
 
 aside {
@@ -63,10 +62,6 @@ aside #name {
     font-size: 2em;
 }
 
-aside .links {
-    margin-bottom: 0;
-}
-
 main {
     flex: 1;
     overflow-y: auto;
@@ -81,19 +76,9 @@ main {
     font-size: 2em;
 }
 
-.subtitle {
-    width: 100%;
-}
-
-.subtitle .row1 {
-    display: flex;
-    justify-content: space-between;
-}
-
-.subtitle .row2 {
-    display: flex;
-    justify-content: space-between;
-    font-size: small;
+#content h3 {
+    color: #555;
+    font-size: 1.5em;
 }
 
 footer {
