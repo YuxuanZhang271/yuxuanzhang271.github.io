@@ -81,6 +81,21 @@ main {
     font-size: 2em;
 }
 
+.subtitle {
+    width: 100%;
+}
+
+.subtitle .row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subtitle .row2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: small;
+}
+
 footer {
     font-size: small;
     padding: 10px;
