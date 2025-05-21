@@ -41,6 +41,10 @@
             Yuxuan Zhang's Homepage
         </footer>
 
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
         <script>
             function updateFooter(pageName) {
                 const footer = document.querySelector('footer');
@@ -61,6 +65,16 @@
                 .then(r => r.text())
                 .then(html => {
                     document.getElementById('content').innerHTML = html;
+                    if (name === 'about') {
+                        var $grid = $('.grid').imagesLoaded( function() {
+                            $grid.masonry({
+                                itemSelector: '.grid-item',
+                                percentPosition: true,
+                                columnWidth: '.grid-sizer', 
+                                gutter: 3,
+                            }); 
+                        });
+                    }
                 })
                 .catch(() => {
                     document.getElementById('content').innerHTML = '<p>Content not found.</p>';
