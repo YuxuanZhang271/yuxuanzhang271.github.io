@@ -115,6 +115,7 @@ aside #links a {
 }
 
 #about .gallery {
+    position: relative;
     max-width: 100%;
     margin: 10px auto;
 }
