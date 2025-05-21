@@ -114,13 +114,19 @@ aside #links a {
     color: #555;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+#about .gallery {
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-.gallery img {
-    width: 30%;
-    height: auto;
+#about .gallery .item {
+    width: 33.333%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#about .gallery .item img {
     display: block;
+    width: 100%;
+    height: auto;
 }

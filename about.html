@@ -4,7 +4,30 @@
     <p>Outside of work/study, I like to play basketball 🏀, play guitar 🎸, photography 📷 and paint ✍️. Other sports like swimming 🏊, badminton 🏸 and table tennis 🏓 also good to me. </p>
 
     <div class="gallery">
-        <img src="images/photos/1.jpeg">
-        <img src="images/photos/2.jpeg">
+        <div class="item"><img src="images/photos/1.jpeg" alt=""></div>
+        <div class="item"><img src="images/photos/2.jpeg" alt=""></div>
+        <div class="item"><img src="images/photos/3.jpeg" alt=""></div>
+        <div class="item"><img src="images/photos/4.jpeg" alt=""></div>
     </div>
+
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var grid = document.querySelector('#about .gallery');
+
+            // 等待所有图片加载完毕，避免错位
+            imagesLoaded(grid, function() {
+                new Masonry(grid, {
+                itemSelector: '.item',        // 瀑布项选择器
+                columnWidth: '.item',         // 以 .item 本身的宽度作为列宽
+                gutter: 10,                   // 列间距 10px
+                percentPosition: true,        // 支持百分比宽度
+                transitionDuration: '0.3s',   // 动画时长
+                fitWidth: false               // 不强制整体居中
+                });
+            });
+        });
+    </script>
 </section>
