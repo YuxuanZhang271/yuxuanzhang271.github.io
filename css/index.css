@@ -120,8 +120,9 @@ aside #links a {
 }
 
 #about .gallery .item {
-    width: 30%;
+    width: 33.33%;
     margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 #about .gallery .item img {
