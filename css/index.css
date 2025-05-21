@@ -115,8 +115,8 @@ aside #links a {
 }
 
 #about .gallery {
-    max-width: 1200px;
-    margin: 20px auto;
+    max-width: 100%;
+    margin: 10px auto;
 }
 
 #about .gallery .item {
