@@ -65,16 +65,15 @@
                 .then(r => r.text())
                 .then(html => {
                     document.getElementById('content').innerHTML = html;
-                    if (name === 'about') {
-                        var $grid = $('.grid').imagesLoaded( function() {
-                            $grid.masonry({
-                                itemSelector: '.grid-item',
-                                percentPosition: true,
-                                columnWidth: '.grid-sizer', 
-                                gutter: 3,
-                            }); 
-                        });
-                    }
+                    
+                    var $grid = $('.grid').imagesLoaded( function() {
+                        $grid.masonry({
+                            itemSelector: '.grid-item',
+                            percentPosition: true,
+                            columnWidth: '.grid-sizer', 
+                            gutter: 3,
+                        }); 
+                    });
                 })
                 .catch(() => {
                     document.getElementById('content').innerHTML = '<p>Content not found.</p>';
