@@ -11,7 +11,7 @@
 
         <script src="https://unpkg.com/three@0.138.0/build/three.min.js"></script>
         <script src="https://unpkg.com/three@0.138.0/examples/js/controls/OrbitControls.js"></script>
-        <script src="https://unpkg.com/three-globe"></script>
+        <script src="https://unpkg.com/three-globe@2.24.10/dist/three-globe.min.js"></script>
     </head>
 
     <body>
@@ -52,102 +52,76 @@
         <script>           
             // Globe Initializing
             function initGlobe() {
-                // 1. 城市点数据（武汉、哈尔滨）
-                const cityPoints = [
-                    {
-                    name: '武汉',
-                    lat: 30.5928,
-                    lng: 114.3055,
-                    color: 'cyan',
-                    size: 0.5
-                    },
-                    {
-                    name: '哈尔滨',
-                    lat: 45.8038,
-                    lng: 126.5349,
-                    color: 'cyan',
-                    size: 0.5
-                    }
-                ];
-
-                // 2. 获取容器并创建场景、相机、渲染器
                 const container = document.getElementById('globeViz');
-                if (!container) return;
+                if (!container || container.clientHeight === 0) return;
 
+                // 1. 场景、相机、渲染器
                 const scene = new THREE.Scene();
-
                 const camera = new THREE.PerspectiveCamera(
                     45,
                     container.clientWidth / container.clientHeight,
                     0.1,
                     1000
                 );
-                // 初始将相机放在 z=300（地球半径是 100，相机在距离地球中心 300 的位置）
+                // 默认地球半径是 100，所以相机置于 z=300 能看全球
                 camera.position.set(0, 0, 300);
 
                 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
                 renderer.setSize(container.clientWidth, container.clientHeight);
-                // 可根据需要显式设置清空颜色：
-            //      renderer.setClearColor(0x000000, 1);
                 container.appendChild(renderer.domElement);
 
-                // 3. 添加光源（保持环境光 + 平行光）
+                // 2. 光源
                 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
                 scene.add(ambientLight);
-
                 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
                 directionalLight.position.set(100, 100, 100);
                 scene.add(directionalLight);
 
-                // 4. OrbitControls：调整 minDistance/maxDistance，使相机可正常观察地球
+                // 3. OrbitControls
                 const controls = new THREE.OrbitControls(camera, renderer.domElement);
                 controls.enablePan = false;
-                controls.minDistance = 150;  // 最少能拉近到距离中心150
-                controls.maxDistance = 500;  // 最多能拉远到距离中心500
+                controls.minDistance = 120; // 最小拉近到距离中心 120
+                controls.maxDistance = 600; // 最多拉远到距离中心 600
                 controls.rotateSpeed = 0.6;
                 controls.zoomSpeed = 0.7;
 
-                // 5. 创建 ThreeGlobe 实例，设置贴图和半径
+                // 4. 城市点数据
+                const cityPoints = [
+                    { name: '武汉',   lat: 30.5928, lng: 114.3055, color: 'cyan', size: 0.5 },
+                    { name: '哈尔滨', lat: 45.8038, lng: 126.5349, color: 'cyan', size: 0.5 }
+                ];
+
+                // 5. 创建地球（不调用 globeRadius）
                 const GlobeConstructor = window['ThreeGlobe'];
                 const Globe = new GlobeConstructor()
-                    // 地球贴图（昼间纹理），可以根据需要改成其他资源
+                    // 地球贴图
                     .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg')
-                    // 显式设置地球半径为 100
-                    .globeRadius(100);
-
-                // 6. 绑定“点数据”（武汉、哈尔滨）
-                Globe
+                    // 直接绑定点数据
                     .pointsData(cityPoints)
                     .pointLat(d => d.lat)
                     .pointLng(d => d.lng)
-                    // 将点稍微抬高地表 1% 半径，避开贴图干扰
                     .pointAltitude(d => 0.01)
-                    // 点的大小：0.5 表示 0.5% 地球半径（即约 0.5 单位）
                     .pointRadius(d => d.size)
                     .pointColor(d => d.color)
-                    .pointLabel(d => d.name)          // 鼠标悬停时标签（如果打开 tooltip 功能可用）
+                    .pointLabel(d => d.name)
                     .pointLabelResolution(1024)
                     .pointLabelSize(1.5);
 
-                // 7. 设置初始旋转：将经度 104°E 对准中心
+                // 6. 初始旋转：104°E 对准中心
                 Globe.rotation.y = - (104 * Math.PI / 180);
-                // 如需微调北纬 35°的抬高，请解开下一行注释
-                // Globe.rotation.x = - (35 * Math.PI / 180);
+                // 如需同时抬高北纬 35°：
+            //    Globe.rotation.x = - (35 * Math.PI / 180);
 
                 scene.add(Globe);
 
-                // 8. 渲染循环（移除自动自转，只保留交互）
+                // 7. 渲染循环
                 (function animate() {
                     requestAnimationFrame(animate);
-
-                    // 如果后续想要恢复自动转动，可在此放开下面一行
-                    // Globe.rotation.y += 0.0005;
-
                     controls.update();
                     renderer.render(scene, camera);
                 })();
 
-                // 9. 监听窗口尺寸变化，保持自适应
+                // 8. 窗口尺寸自适应
                 window.addEventListener('resize', () => {
                     const w = container.clientWidth;
                     const h = container.clientHeight;
