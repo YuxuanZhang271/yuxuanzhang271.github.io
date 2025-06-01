@@ -68,7 +68,16 @@
                 }).addTo(map);
 
                 var wuhan = L.marker([30.5928, 114.3055]).addTo(map);
+                wuhan.bindPopup("Wuhan, Hubei, China").openPopup();
                 var harbin = L.marker([45.800, 126.633]).addTo(map);
+                harbin.bindPopup("Harbin, Heilongjiang, China").openPopup();
+                var shanghai = L.marker([31.2304, 121.4737]).addTo(map);
+                shanghai.bindPopup("Shanghai, China").openPopup();
+
+                var line1 = L.polygon([
+                    [30.5928, 114.3055],
+                    [45.800, 126.633]
+                ]).addTo(map);
             }
 
             function loadContentFromHash() {
