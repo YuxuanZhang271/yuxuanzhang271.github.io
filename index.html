@@ -100,15 +100,15 @@
                 const Globe = new GlobeConstructor()
                     .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg');
 
-                Globe.pointsData(cityPoints)
-                    .pointLat(d => d.lat)
-                    .pointLng(d => d.lng)
-                    .pointAltitude(d => 0.01)
-                    .pointRadius(d => d.size)
-                    .pointColor(d => d.color)
-                    .pointLabel(d => d.name)
-                    .pointLabelResolution(1024)
-                    .pointLabelSize(1.5);
+                // Globe.pointsData(cityPoints)
+                //     .pointLat(d => d.lat)
+                //     .pointLng(d => d.lng)
+                //     .pointAltitude(d => 0.01)
+                //     .pointRadius(d => d.size)
+                //     .pointColor(d => d.color)
+                //     .pointLabel(d => d.name)
+                //     .pointLabelResolution(1024)
+                //     .pointLabelSize(1.5);
 
                 Globe.rotation.y = - (104 * Math.PI / 180);
                 scene.add(Globe);
@@ -122,40 +122,40 @@
                     renderer.render(scene, camera);
                 })();
 
-                window.addEventListener('resize', () => {
-                    const w = container.clientWidth;
-                    const h = container.clientHeight;
-                    camera.aspect = w / h;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(w, h);
-                });
+                // window.addEventListener('resize', () => {
+                //     const w = container.clientWidth;
+                //     const h = container.clientHeight;
+                //     camera.aspect = w / h;
+                //     camera.updateProjectionMatrix();
+                //     renderer.setSize(w, h);
+                // });
 
-                const tooltip = document.getElementById('tooltip');
-                window.addEventListener('mousemove', ev => {
-                    const x = ev.clientX;
-                    const y = ev.clientY;
-                    const rect = renderer.domElement.getBoundingClientRect();
-                    const mouse = new THREE.Vector2(
-                    ((x - rect.left) / rect.width) * 2 - 1,
-                    - ((y - rect.top) / rect.height) * 2 + 1
-                    );
+                // const tooltip = document.getElementById('tooltip');
+                // window.addEventListener('mousemove', ev => {
+                //     const x = ev.clientX;
+                //     const y = ev.clientY;
+                //     const rect = renderer.domElement.getBoundingClientRect();
+                //     const mouse = new THREE.Vector2(
+                //     ((x - rect.left) / rect.width) * 2 - 1,
+                //     - ((y - rect.top) / rect.height) * 2 + 1
+                //     );
 
-                    const raycaster = new THREE.Raycaster();
-                    raycaster.setFromCamera(mouse, camera);
+                //     const raycaster = new THREE.Raycaster();
+                //     raycaster.setFromCamera(mouse, camera);
 
-                    const intersects = raycaster.intersectObjects(Globe.pointsMesh.children);
-                    if (intersects.length > 0) {
-                    const { object } = intersects[0];
-                    if (object && object.userData && object.userData.label) {
-                        tooltip.style.opacity = 1;
-                        tooltip.style.left = `${x + 10}px`;
-                        tooltip.style.top = `${y + 10}px`;
-                        tooltip.innerHTML = object.userData.label;
-                    }
-                    } else {
-                    tooltip.style.opacity = 0;
-                    }
-                });
+                //     const intersects = raycaster.intersectObjects(Globe.pointsMesh.children);
+                //     if (intersects.length > 0) {
+                //     const { object } = intersects[0];
+                //     if (object && object.userData && object.userData.label) {
+                //         tooltip.style.opacity = 1;
+                //         tooltip.style.left = `${x + 10}px`;
+                //         tooltip.style.top = `${y + 10}px`;
+                //         tooltip.innerHTML = object.userData.label;
+                //     }
+                //     } else {
+                //     tooltip.style.opacity = 0;
+                //     }
+                // });
             }
 
             // Footer Updating
