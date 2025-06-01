@@ -8,10 +8,6 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-
-        <script src="https://unpkg.com/three@0.138.0/build/three.min.js"></script>
-        <script src="https://unpkg.com/three@0.138.0/examples/js/controls/OrbitControls.js"></script>
-        <script src="https://unpkg.com/three-globe@2.24.10/dist/three-globe.min.js"></script>
     </head>
 
     <body>
@@ -50,114 +46,6 @@
         </footer>
 
         <script>           
-            // Globe Initializing
-            function initGlobe() {
-                const container = document.getElementById('globeViz');
-                if (!container || container.clientHeight === 0) return;
-
-                // 1. 场景、相机、渲染器
-                const scene = new THREE.Scene();
-                const camera = new THREE.PerspectiveCamera(
-                    45,
-                    container.clientWidth / container.clientHeight,
-                    0.1,
-                    1000
-                );
-                // 默认地球半径是 100，所以相机置于 z=300 能看全球
-                camera.position.set(0, 0, 300);
-
-                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-                renderer.setSize(container.clientWidth, container.clientHeight);
-                container.appendChild(renderer.domElement);
-
-                // 2. 光源
-                const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-                scene.add(ambientLight);
-                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-                directionalLight.position.set(100, 100, 100);
-                scene.add(directionalLight);
-
-                // 3. OrbitControls
-                const controls = new THREE.OrbitControls(camera, renderer.domElement);
-                controls.enablePan = false;
-                controls.minDistance = 120; // 最小拉近到距离中心 120
-                controls.maxDistance = 600; // 最多拉远到距离中心 600
-                controls.rotateSpeed = 0.6;
-                controls.zoomSpeed = 0.7;
-
-                // 4. 城市点数据
-                const cityPoints = [
-                    { name: '武汉',   lat: 30.5928, lng: 114.3055, color: 'cyan', size: 0.5 },
-                    { name: '哈尔滨', lat: 45.8038, lng: 126.5349, color: 'cyan', size: 0.5 }
-                ];
-
-                // 5. 创建地球（不调用 globeRadius）
-                const GlobeConstructor = window['ThreeGlobe'];
-                const Globe = new GlobeConstructor()
-                    // 地球贴图
-                    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg')
-                    // 直接绑定点数据
-                    .pointsData(cityPoints)
-                    .pointLat(d => d.lat)
-                    .pointLng(d => d.lng)
-                    .pointAltitude(d => 0.01)
-                    .pointRadius(d => d.size)
-                    .pointColor(d => d.color)
-                    .pointLabel(d => d.name)
-                    .pointLabelResolution(1024)
-                    .pointLabelSize(1.5);
-
-                // 6. 初始旋转：104°E 对准中心
-                Globe.rotation.y = - (104 * Math.PI / 180);
-                // 如需同时抬高北纬 35°：
-            //    Globe.rotation.x = - (35 * Math.PI / 180);
-
-                scene.add(Globe);
-
-                // 7. 渲染循环
-                (function animate() {
-                    requestAnimationFrame(animate);
-                    controls.update();
-                    renderer.render(scene, camera);
-                })();
-
-                // 8. 窗口尺寸自适应
-                window.addEventListener('resize', () => {
-                    const w = container.clientWidth;
-                    const h = container.clientHeight;
-                    camera.aspect = w / h;
-                    camera.updateProjectionMatrix();
-                    renderer.setSize(w, h);
-                });
-
-                // const tooltip = document.getElementById('tooltip');
-                // window.addEventListener('mousemove', ev => {
-                //     const x = ev.clientX;
-                //     const y = ev.clientY;
-                //     const rect = renderer.domElement.getBoundingClientRect();
-                //     const mouse = new THREE.Vector2(
-                //     ((x - rect.left) / rect.width) * 2 - 1,
-                //     - ((y - rect.top) / rect.height) * 2 + 1
-                //     );
-
-                //     const raycaster = new THREE.Raycaster();
-                //     raycaster.setFromCamera(mouse, camera);
-
-                //     const intersects = raycaster.intersectObjects(Globe.pointsMesh.children);
-                //     if (intersects.length > 0) {
-                //     const { object } = intersects[0];
-                //     if (object && object.userData && object.userData.label) {
-                //         tooltip.style.opacity = 1;
-                //         tooltip.style.left = `${x + 10}px`;
-                //         tooltip.style.top = `${y + 10}px`;
-                //         tooltip.innerHTML = object.userData.label;
-                //     }
-                //     } else {
-                //     tooltip.style.opacity = 0;
-                //     }
-                // });
-            }
-
             // Footer Updating
             function updateFooter(pageName) {
                 const footer = document.querySelector('footer');
@@ -179,11 +67,6 @@
                     .then(r => r.text())
                     .then(html => {
                         document.getElementById('content').innerHTML = html;
-
-                        // Globe
-                        if (name === 'about') {
-                            setTimeout(initGlobe, 500);
-                        }
 
                         // Masonry
                         const $grid = $('.grid').imagesLoaded(function () {
