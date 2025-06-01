@@ -100,10 +100,10 @@
                 const Globe = new GlobeConstructor()
                     .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-water.jpg');
 
-                Globe.pointsData(cityPoints)
-                    .pointLat(d => d.lat).pointLng(d => d.lng).pointAltitude(d => 0.01)
-                    .pointRadius(d => d.size).pointColor(d => d.color).pointLabel(d => d.name)
-                    .pointLabelResolution(1024).pointLabelSize(1.5);
+                // Globe.pointsData(cityPoints)
+                //     .pointLat(d => d.lat).pointLng(d => d.lng).pointAltitude(d => 0.01)
+                //     .pointRadius(d => d.size).pointColor(d => d.color).pointLabel(d => d.name)
+                //     .pointLabelResolution(1024).pointLabelSize(1.5);
 
                 Globe.rotation.y = - (104 * Math.PI / 180);
                 scene.add(Globe);

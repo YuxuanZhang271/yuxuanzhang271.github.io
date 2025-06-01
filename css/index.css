@@ -144,7 +144,14 @@ aside #links a {
     max-width: 100%;
 }
 
-#globeViz {
+#globeContainer {
     width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+}
+
+#globeViz {
+    width: 400px;
     height: 400px;
 }
