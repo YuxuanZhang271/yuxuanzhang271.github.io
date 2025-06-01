@@ -67,13 +67,11 @@
                 }
             ]
             
-            // Global Initializing
+            // Globe Initializing
             function initGlobe() {
-                // 1.4.1 找到挂载容器
                 const container = document.getElementById('globeViz');
                 if (!container) return; // 如果没有找到容器，则跳出
 
-                // 1.4.2 创建场景、相机、渲染器
                 const scene = new THREE.Scene();
                 const camera = new THREE.PerspectiveCamera(
                     45,
@@ -81,56 +79,49 @@
                     0.1,
                     1000
                 );
-                camera.position.set(0, 0, 300);
+                camera.position.set(0, 0, 400);
 
                 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
                 renderer.setSize(container.clientWidth, container.clientHeight);
                 container.appendChild(renderer.domElement);
 
-                // 1.4.3 添加光源
                 const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
                 scene.add(ambientLight);
                 const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
                 directionalLight.position.set(100, 100, 100);
                 scene.add(directionalLight);
 
-                // 1.4.4 添加 OrbitControls（用于鼠标拖动旋转、缩放）
                 const controls = new THREE.OrbitControls(camera, renderer.domElement);
                 controls.enablePan = false;
-                controls.minDistance = 150;
-                controls.maxDistance = 600;
+                controls.minDistance = 400;
+                controls.maxDistance = 400;
 
-                // 1.4.5 创建一个最简单的地球
                 const GlobeConstructor = window['ThreeGlobe']; 
                 const Globe = new GlobeConstructor()
-                    // 载入一张蓝色大理石纹理（可自行换成其他公开可访问的图片）
-                    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
+                    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-day.jpg');
 
-                // Globe.pointsData(cityPoints)
-                //     .pointLat(d => d.lat)
-                //     .pointLng(d => d.lng)
-                //     .pointAltitude(d => 0.01)
-                //     .pointRadius(d => d.size)
-                //     .pointColor(d => d.color)
-                //     .pointLabel(d => d.name)
-                //     .pointLabelResolution(1024)
-                //     .pointLabelSize(1.5);
+                Globe.pointsData(cityPoints)
+                    .pointLat(d => d.lat)
+                    .pointLng(d => d.lng)
+                    .pointAltitude(d => 0.01)
+                    .pointRadius(d => d.size)
+                    .pointColor(d => d.color)
+                    .pointLabel(d => d.name)
+                    .pointLabelResolution(1024)
+                    .pointLabelSize(1.5);
 
                 Globe.rotation.y = - (104 * Math.PI / 180);
                 scene.add(Globe);
 
-                // 1.4.6 自转动画 + 渲染循环
                 (function animate() {
                     requestAnimationFrame(animate);
 
-                    // 让地球在 Y 轴缓慢自转
                     // Globe.rotation.y += 0.0005;
 
                     controls.update();
                     renderer.render(scene, camera);
                 })();
 
-                // 1.4.7 响应浏览器窗口大小变化
                 window.addEventListener('resize', () => {
                     const w = container.clientWidth;
                     const h = container.clientHeight;
@@ -139,34 +130,32 @@
                     renderer.setSize(w, h);
                 });
 
-                // const tooltip = document.getElementById('tooltip');
-                // // 当鼠标移动到画布上，尝试拾取点并展示标签
-                // window.addEventListener('mousemove', ev => {
-                //     const x = ev.clientX;
-                //     const y = ev.clientY;
-                //     const rect = renderer.domElement.getBoundingClientRect();
-                //     const mouse = new THREE.Vector2(
-                //     ((x - rect.left) / rect.width) * 2 - 1,
-                //     - ((y - rect.top) / rect.height) * 2 + 1
-                //     );
+                const tooltip = document.getElementById('tooltip');
+                window.addEventListener('mousemove', ev => {
+                    const x = ev.clientX;
+                    const y = ev.clientY;
+                    const rect = renderer.domElement.getBoundingClientRect();
+                    const mouse = new THREE.Vector2(
+                    ((x - rect.left) / rect.width) * 2 - 1,
+                    - ((y - rect.top) / rect.height) * 2 + 1
+                    );
 
-                //     const raycaster = new THREE.Raycaster();
-                //     raycaster.setFromCamera(mouse, camera);
+                    const raycaster = new THREE.Raycaster();
+                    raycaster.setFromCamera(mouse, camera);
 
-                //     // 获取所有“点”对应的 mesh
-                //     const intersects = raycaster.intersectObjects(Globe.pointsMesh.children);
-                //     if (intersects.length > 0) {
-                //     const { object } = intersects[0];
-                //     if (object && object.userData && object.userData.label) {
-                //         tooltip.style.opacity = 1;
-                //         tooltip.style.left = `${x + 10}px`;
-                //         tooltip.style.top = `${y + 10}px`;
-                //         tooltip.innerHTML = object.userData.label;
-                //     }
-                //     } else {
-                //     tooltip.style.opacity = 0;
-                //     }
-                // });
+                    const intersects = raycaster.intersectObjects(Globe.pointsMesh.children);
+                    if (intersects.length > 0) {
+                    const { object } = intersects[0];
+                    if (object && object.userData && object.userData.label) {
+                        tooltip.style.opacity = 1;
+                        tooltip.style.left = `${x + 10}px`;
+                        tooltip.style.top = `${y + 10}px`;
+                        tooltip.innerHTML = object.userData.label;
+                    }
+                    } else {
+                    tooltip.style.opacity = 0;
+                    }
+                });
             }
 
             // Footer Updating
