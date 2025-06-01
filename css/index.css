@@ -144,6 +144,11 @@ aside #links a {
     max-width: 100%;
 }
 
+#mapContainer {
+    width: 100%;
+    text-align: center;
+}
+
 #map {
     width: 600px;
     height: 400px;
