@@ -143,3 +143,7 @@ aside #links a {
     display: block;
     max-width: 100%;
 }
+
+#map {
+    height: 180px;
+}
