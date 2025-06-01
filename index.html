@@ -49,7 +49,6 @@
         </footer>
 
         <script>
-            // 更新 Footer 文本，不修改，只做示意
             function updateFooter(pageName) {
                 const footer = document.querySelector('footer');
                 if (pageName === 'home') {
@@ -60,7 +59,15 @@
                 }
             }
 
-            // 加载指定名称的 HTML（如 home.html、about.html……），并注入到 #content
+            function initWuhanMap() {
+                const map = L.map("map").setView([30.5928, 114.3055], 12);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+            }
+
             function loadContentFromHash() {
                 const defaultPage = 'home';
                 const hash = window.location.hash.slice(1);
@@ -95,34 +102,7 @@
                 updateFooter(name);
             }
 
-            // 单独封装一个函数，专门用来初始化 Leaflet 地图
-            function initWuhanMap() {
-                // 武汉市中心坐标 [纬度, 经度]
-                const wuhanCenter = [30.5928, 114.3055];
-
-                // 1. 创建地图实例并将视图定位到武汉
-                const map = L.map("map").setView(wuhanCenter, 12);
-
-                // 2. 添加 OpenStreetMap 瓦片图层
-                L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                    attribution:
-                        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-                    maxZoom: 19,
-                    tileSize: 256,
-                    zoomOffset: 0
-                }).addTo(map);
-
-                // 3. 可选：在武汉中心点添加一个标记并弹出提示
-                L.marker(wuhanCenter)
-                    .addTo(map)
-                    .bindPopup("这里是武汉市中心")
-                    .openPopup();
-            }
-
-            // 首次页面加载时就调用一次，根据 Hash 判断要加载哪一页
             loadContentFromHash();
-
-            // 监听 Hash 改变（比如点击导航到 #about、#home），重新加载对应内容
             window.addEventListener('hashchange', loadContentFromHash);
         </script>
     </body>
