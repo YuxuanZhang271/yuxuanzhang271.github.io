@@ -60,10 +60,10 @@
             }
 
             function initWuhanMap() {
-                var map = L.map("map").setView([30.5928, 114.3055], 1);
+                var map = L.map("map").setView([30.5928, 114.3055], 3);
 
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 3
+                    minZoom:3, maxZoom: 3
                 }).addTo(map);
 
                 var cities = [
