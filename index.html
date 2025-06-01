@@ -63,33 +63,21 @@
                 var map = L.map("map").setView([30.5928, 114.3055], 1);
 
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 3,
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                    maxZoom: 3
                 }).addTo(map);
 
-                var wuhan = L.marker([30.5928, 114.3055]).addTo(map);
-                wuhan.bindPopup("Wuhan, Hubei, China").openPopup();
-                var harbin = L.marker([45.800, 126.633]).addTo(map);
-                harbin.bindPopup("Harbin, Heilongjiang, China").openPopup();
-                var shanghai = L.marker([31.2304, 121.4737]).addTo(map);
-                shanghai.bindPopup("Shanghai, China").openPopup();
-                var changsha = L.marker([28.2282, 112.9388]).addTo(map);
-                changsha.bindPopup("Changsha, Hunan, China").openPopup();
-                var lasa = L.marker([29.6520, 91.1721]).addTo(map);
-                lasa.bindPopup("Lasa, Tibet, China").openPopup();
-                var kl = L.marker([3.1390, 101.6869]).addTo(map);
-                kl.bindPopup("Kuala Lumpur").openPopup();
-                var singapore = L.marker([1.3521, 103.8198]).addTo(map);
-                singapore.bindPopup("Singapore").openPopup();
+                var cities = [
+                    [[30.5928, 114.3055], 'Wuhan, Hubei, China'], 
+                    [[45.800, 126.633], 'Harbin, Heilongjiang, China'], 
+                ];
 
-                var line1 = L.polygon([
-                    [30.5928, 114.3055],
-                    [45.800, 126.633]
-                ]).addTo(map);
-                var line2 = L.polygon([
-                    [1.3521, 103.8198],
-                    [3.1390, 101.6869]
-                ]).addTo(map);
+                for (var i = 0; i < cities.length; i++) {
+                    var coords = cities[i][0];
+                    var label  = cities[i][1];
+
+                    var marker = L.marker(coords).addTo(map);
+                    marker.bindPopup(label);
+                }
             }
 
             function loadContentFromHash() {
