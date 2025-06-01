@@ -50,6 +50,23 @@
         </footer>
 
         <script>
+            const cityPoints = [
+                {
+                    name: '武汉',
+                    lat: 30.5928,
+                    lng: 114.3055,
+                    color: 'cyan',
+                    size: 0.5
+                },
+                {
+                    name: '哈尔滨',
+                    lat: 45.8038,
+                    lng: 126.5349,
+                    color: 'cyan',
+                    size: 0.5
+                }
+            ]
+            
             // Global Initializing
             function initGlobe() {
                 // 1.4.1 找到挂载容器
@@ -89,6 +106,17 @@
                     // 载入一张蓝色大理石纹理（可自行换成其他公开可访问的图片）
                     .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg');
 
+                Globe.pointsData(cityPoints)
+                    .pointLat(d => d.lat)
+                    .pointLng(d => d.lng)
+                    .pointAltitude(d => 0.01)
+                    .pointRadius(d => d.size)
+                    .pointColor(d => d.color)
+                    .pointLabel(d => d.name)
+                    .pointLabelResolution(1024)
+                    .pointLabelSize(1.5);
+
+                Globe.rotation.y = - (104 * Math.PI / 180);
                 scene.add(Globe);
 
                 // 1.4.6 自转动画 + 渲染循环
@@ -96,7 +124,7 @@
                     requestAnimationFrame(animate);
 
                     // 让地球在 Y 轴缓慢自转
-                    Globe.rotation.y += 0.0005;
+                    // Globe.rotation.y += 0.0005;
 
                     controls.update();
                     renderer.render(scene, camera);
