@@ -180,13 +180,12 @@
                     .then(html => {
                         document.getElementById('content').innerHTML = html;
 
-                        // 只有当加载的是 About 板块时，才初始化地球
+                        // Globe
                         if (name === 'about') {
-                            // 确保 DOM 完全插入后再初始化
-                            setTimeout(initGlobe, 50);
+                            initGlobe()
                         }
 
-                        // 如果存在 .grid 布局，则执行 Masonry
+                        // Masonry
                         const $grid = $('.grid').imagesLoaded(function () {
                             $grid.masonry({
                                 itemSelector: '.grid-item',
