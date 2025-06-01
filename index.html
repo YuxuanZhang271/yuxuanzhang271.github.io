@@ -3,14 +3,14 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+4dk9gD2JpcpMx2DxN2JYc0u+QU3Y8r1G4/5ZP0XY=" crossorigin=""/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
         <title>Yuxuan Zhang's Homepage</title>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-QVQFKDXGh7UJwA8nmsMBhSTkmM5luYXjeP4syKQYvBk=" crossorigin=""></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     </head>
 
     <body>
@@ -76,10 +76,8 @@
                 fetch(`${name}.html`)
                     .then(r => r.text())
                     .then(html => {
-                        // 1. 把获取到的 HTML 塞到 #content
                         document.getElementById('content').innerHTML = html;
 
-                        // 2. 进行 Masonry 布局（如果有 .grid 元素）
                         const $grid = $('.grid').imagesLoaded(function () {
                             $grid.masonry({
                                 itemSelector: '.grid-item',
@@ -89,9 +87,7 @@
                             });
                         });
 
-                        // 3. 如果当前加载的是 about.html，就在这里初始化地图
                         if (name === 'about') {
-                            // 注意：这里必须确保 <div id="map"></div> 已经在 about.html 里
                             initWuhanMap();
                         }
                     })
