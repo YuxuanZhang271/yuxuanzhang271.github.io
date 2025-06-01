@@ -146,5 +146,5 @@ aside #links a {
 
 #map {
     width: 100%;
-    height: 500px;
+    aspect-ratio: 1;
 }
