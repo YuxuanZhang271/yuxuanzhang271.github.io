@@ -122,13 +122,13 @@
                     renderer.render(scene, camera);
                 })();
 
-                // window.addEventListener('resize', () => {
-                //     const w = container.clientWidth;
-                //     const h = container.clientHeight;
-                //     camera.aspect = w / h;
-                //     camera.updateProjectionMatrix();
-                //     renderer.setSize(w, h);
-                // });
+                window.addEventListener('resize', () => {
+                    const w = container.clientWidth;
+                    const h = container.clientHeight;
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(w, h);
+                });
 
                 // const tooltip = document.getElementById('tooltip');
                 // window.addEventListener('mousemove', ev => {
