@@ -145,5 +145,6 @@ aside #links a {
 }
 
 #map {
-    height: 180px;
+    width: 100%;
+    height: 300px;
 }
