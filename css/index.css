@@ -142,3 +142,9 @@ aside #links a {
     display: block;
     max-width: 100%;
 }
+
+#globeViz {
+    width: 100%;
+    height: 500px;
+    margin-top: 20px;
+}
