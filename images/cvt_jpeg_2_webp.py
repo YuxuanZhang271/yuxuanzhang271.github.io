@@ -3,7 +3,8 @@ import glob
 import os
 
 
-img_paths = glob.glob('photos/*.jpeg')
+img_paths = glob.glob('./*.png')
+# img_paths = glob.glob('photos/*.jpeg')
 for img_path in img_paths: 
     img = cv2.imread(img_path)
 
