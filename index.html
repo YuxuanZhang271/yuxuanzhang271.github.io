@@ -60,24 +60,32 @@
             }
 
             function initWuhanMap() {
-                var map = L.map("map").setView([30.5928, 114.3055], 2);
+                var map = L.map("map").setView([30.5928, 114.3055], 3);
 
                 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    minZoom:2, maxZoom: 2
+                    minZoom:3, maxZoom: 3
                 }).addTo(map);
 
                 var cities = [
-                    [[30.5928, 114.3055], 'Wuhan, Hubei, China'], 
-                    [[45.800, 126.633], 'Harbin, Heilongjiang, China'], 
-                    [[1.3521, 103.8198], 'Singapore, Singapore'], 
-                    [[3.1390, 101.6869], 'Kuala Lumpur, Malaysia'], 
+                    [[30.5928, 114.3055], 'Hubei, China'], 
+                    [[28.2282, 112.9388], 'Hunan, China'], 
+                    [[29.5630, 106.5516], 'Chongqing, China'], 
+                    [[30.5728, 104.0668], 'Sichuan, China'], 
+                    [[39.9042, 116.4074], 'Beijing, China'], 
+                    [[45.8000, 126.6330], 'Heilongjiang, China'], 
+                    [[43.8171, 125.3235], 'Jilin, China'], 
+                    [[36.6512, 117.1201], 'Shandong, China'], 
                     [[31.2304, 121.4737], 'Shanghai, China'], 
-                    [[36.0662, 120.3826], 'Qingdao, Shandong, China'], 
-                    [[29.6520, 91.1721], 'Lhasa, Tibet, China'], 
-                    [[36.0611, 103.8343], 'Lanzhou, Gansu, China'], 
-                    [[28.2282, 112.9388], 'Changsha, Hunan, China'], 
-                    [[29.5630, 106.5516], 'Chongqing, Chongqing, China'], 
-                    [[30.5728, 104.0668], 'Chengdu, Sichuan, China'], 
+                    [[29.6520, 91.1721], 'Tibet, China'], 
+                    [[22.8170, 108.3669], 'Guangxi, China'], 
+                    [[23.1291, 113.2644], 'Guangdong, China'], 
+                    [[26.6470, 106.6302], 'Guizhou, China'], 
+                    [[20.0440, 110.1999], 'Hainan, China'], 
+                    [[26.0745, 119.2965], 'Fujian, China'], 
+                    [[36.6171, 101.7782], 'Qinghai, China'], 
+                    [[36.0611, 103.8343], 'Gansu, China'], 
+                    [[1.3521, 103.8198], 'Singapore'], 
+                    [[3.1390, 101.6869], 'Kuala Lumpur, Malaysia'], 
                 ];
 
                 for (var i = 0; i < cities.length; i++) {
