@@ -131,12 +131,12 @@ aside #links a {
 
 .grid-sizer,
 .grid-item {
-    width: 24.5%;
+    width: 24.3%;
 }
 
 .grid-item {
     float: left;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .grid-item img {
