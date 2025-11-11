@@ -13,12 +13,27 @@
             button.active {
                 font-weight: bold;
             }
+
+            /* 1. 定义一个“渐入”的动画 */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0; /* 从完全透明开始 */
+                    transform: translateY(10px); /* 额外：从下方 10px 的位置开始 */
+                }
+                to {
+                    opacity: 1; /* 渐变到完全不透明 */
+                    transform: translateY(0); /* 额外：移动到其原始位置 */
+                }
+            }
+
             .content-page {
                 display: none; 
                 overflow: auto;
             }
+
             .content-page.active {
                 display: block; 
+                animation: fadeIn 0.4s ease-out;
             }
         </style>
     </head>
@@ -88,7 +103,7 @@
                     <h2>Education 📖</h2>
                     <ul>
                         <li>
-                            Master in Artificial Intelligence Systems <br>
+                            <span style="font-weight: bold;">Master in Artificial Intelligence Systems</span> <br>
                             Aug, 2025 - Aug, 2026 <br>
                             <ul>
                                 <li>GPA: TBD</li>
@@ -97,7 +112,7 @@
                         </li>
                         <hr>
                         <li>
-                            Graduate Diploma in System Analysis <br>
+                            <span style="font-weight: bold;">Graduate Diploma in System Analysis</span> <br>
                             Jul, 2023 - Jan, 2025
                             <ul>
                                 <li>GPA: 4.11 / 5.0</li>
@@ -106,7 +121,7 @@
                         </li>
                         <hr>
                         <li>
-                            Bachelor in Intelligent Test and Control Engineering <br>
+                            <span style="font-weight: bold;">Bachelor in Intelligent Test and Control Engineering</span> <br>
                             Sept, 2020 - Jun, 2024
                             <ul>
                                 <li>GPA: 4.02 / 5.0</li>
@@ -121,7 +136,7 @@
                     <ul>
                         <li>
                             <!-- <a href="">Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings</a> <br> -->
-                            Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings <br>
+                            <span style="font-weight: bold;">Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings</span> <br>
                             AAAI 2026 Workshop HCM Submission <br>
                             Author: Haziq Razali, <span style="font-weight: bold;">Yuxuan Zhang</span>, Qianli Xu, Yiannis Demiris
                             <ul>
@@ -133,7 +148,7 @@
                         </li>
                         <hr>
                         <li>
-                            <a href="https://arxiv.org/abs/2506.17561">VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models</a> <br>
+                            <span style="font-weight: bold;"><a href="https://arxiv.org/abs/2506.17561">VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models</a></span> <br>
                             NeurIPS 2025 Workshop EWM Oral <br>
                             Author: Chongkai Gao, Zixuan Liu, Zhenghao Chi, Junshan Huang, Xin Fei, Yiwen Hou, <span style="font-weight: bold;">Yuxuan Zhang</span>, Yudi Lin, Zhirui Fang, Lin Shao
                             <ul>
@@ -149,12 +164,12 @@
                     <h2>Experience 💼</h2>
                     <ul>
                         <li>
-                            Research Intern (Hardware / Software / System Design) @ Advanced Micro Devices (Singapore) Pte Ltd <br>
+                            <span style="font-weight: bold;">Research Intern (Hardware / Software / System Design) @ Advanced Micro Devices (Singapore) Pte Ltd</span> <br>
                             Mar, 2026 - Aug, 2026
                         </li>
                         <hr>
                         <li>
-                            Humanoid Robotics Development Intern @ FatFish Technology Pte Ltd <br>
+                            <span style="font-weight: bold;">Humanoid Robotics Development Intern @ FatFish Technology Pte Ltd</span> <br>
                             Oct, 2026 - Dec, 2026 <br>
                             <!-- <ul>
                                 <li></li>
@@ -162,22 +177,22 @@
                         </li>
                         <hr>
                         <li>
-                            Research Intern @ AdaComp Lab, National University of Singapore <br>
+                            <span style="font-weight: bold;">Research Intern @ AdaComp Lab, National University of Singapore</span> <br>
                             Jun, 2025 - Sept, 2025
                         </li>
                         <hr>
                         <li>
-                            Research Intern @ I2R, Agency for Science, Technology and Research (A*STAR) <br>
+                            <span style="font-weight: bold;">Research Intern @ I2R, Agency for Science, Technology and Research (A*STAR)</span> <br>
                             Mar, 2025 - Dec, 2025
                         </li>
                         <hr>
                         <li>
-                            Research & Development Intern @ Changjiang Intelligent Technology Pte Ltd <br>
+                            <span style="font-weight: bold;">Research & Development Intern @ Changjiang Intelligent Technology Pte Ltd</span> <br>
                             Jul, 2021 - Aug, 2021
                         </li>
                         <hr>
                         <li>
-                            Game VFX Design Intern @ Boke Network Technology (Hubei) Co Ltd <br>
+                            <span style="font-weight: bold;">Game VFX Design Intern @ Boke Network Technology (Hubei) Co Ltd</span> <br>
                             Jan, 2021 - Feb, 2021
                         </li>
                     </ul>
@@ -187,7 +202,7 @@
                     <h2>Projects 💻</h2>
                     <ul>
                         <li>
-                            Motion Analysis in Gym <br>
+                            <span style="font-weight: bold;">Motion Analysis in Gym</span> <br>
                             Sept, 2025 - Oct, 2025 <br>
                             <ul>
                                 <li>Used 4D-Humans for human body tracking, HAMER for human hand tracking. Integrated SMPL model and MANO model into SMPLX model. </li>
@@ -197,7 +212,7 @@
                         </li>
                         <hr>
                         <li>
-                            AI-Powered Scheduling System <br>
+                            <span style="font-weight: bold;">AI-Powered Scheduling System</span> <br>
                             Sept, 2025 - Oct, 2025 <br>
                             <ul>
                                 <li>Used Evolution Algorithm to train task evaluation model (task attributes as input, predicted energy and pressure as output). </li>
@@ -207,7 +222,7 @@
                         </li>
                         <hr>
                         <li>
-                            Deploying Gaussian Splatting on Apple Metal Chip <br>
+                            <span style="font-weight: bold;">Deploying Gaussian Splatting on Apple Metal Chip</span> <br>
                             Sept, 2024 - Jan, 2025 <br>
                             <ul>
                                 <li>Used OpenCV to calibrate the iPhone's camera. </li>
@@ -218,7 +233,7 @@
                         </li>
                         <hr>
                         <li>
-                            CamC: Multi-Platform Camera Price Comparison \& Prediction <br>
+                            <span style="font-weight: bold;">CamC: Multi-Platform Camera Price Comparison \& Prediction</span> <br>
                             Jun, 2024 - Aug, 2024 <br>
                             <ul>
                                 <li>Trained a kNN model for camera classification, trained SVM models for camera price prediction. </li>
@@ -227,7 +242,7 @@
                         </li>
                         <hr>
                         <li>
-                            Automated Calibration System for A/D Modules <br>
+                            <span style="font-weight: bold;">Automated Calibration System for A/D Modules</span> <br>
                             Oct, 2023 - May, 2024 <br>
                             <ul>
                                 <li>Designed a 16-channel selection circuit, designed the PCB board, soldered the circuit board. </li> 
@@ -238,7 +253,7 @@
                         </li>
                         <hr>
                         <li>
-                            Automated Signal Conditioning Circuit Testing System <br>
+                            <span style="font-weight: bold;">Automated Signal Conditioning Circuit Testing System</span> <br>
                             Sept 2023 <br>
                             <ul>
                                 <li>Enabled LAN communication to control instruments for synchronized measurement. </li>
@@ -247,7 +262,7 @@
                         </li>
                         <hr>
                         <li>
-                            Automated Drone Docking & Charging Platform <br>
+                            <span style="font-weight: bold;">Automated Drone Docking & Charging Platform</span> <br>
                             Oct, 2021 - Sept, 2022 <br>
                             <ul>
                                 <li><span style="font-weight: bold;">Provincial-Level College Students' Innovative Entrepreneurial Training Program</span></li>
@@ -258,7 +273,7 @@
                         </li>
                         <hr>
                         <li>
-                            3D Port Reconstruction - Tianjin Port <br>
+                            <span style="font-weight: bold;">3D Port Reconstruction - Tianjin Port</span> <br>
                             Oct, 2020 - Sept, 2021 <br>
                             <ul>
                                 <li>In Unity, imported the satellite elevation map as 3D model, the satellite orthophoto as texture, to construct a 3D scene. Imported interactive objects. </li>
