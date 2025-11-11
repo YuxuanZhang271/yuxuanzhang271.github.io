@@ -1,0 +1,56 @@
+body {
+    font-family: 'Cormorant Garamond', Garamond, serif;
+    font-size: large;
+    color: rgb(43, 34, 29); 
+    transition: text-shadow 0.3s ease-in-out;
+
+    margin: 0; /* 移除默认边距 */
+    height: 100vh; /* 使 body 占满整个视口高度 */
+    display: flex; /* 使用 flex 布局 */
+    flex-direction: column; /* 垂直排列子元素 (导航 + 内容) */
+    overflow: hidden; /* 隐藏 body 本身的滚动条 */
+}
+
+a {
+    color: inherit; 
+    text-decoration: none; 
+
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+a:hover {
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+button {
+    background: none;
+    border: none;
+
+    font: inherit;
+    color: inherit;
+
+    padding-left: 10pt;
+    padding-right: 10pt;
+
+    transition: text-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+hr {
+    color: rgb(43, 34, 29, 0.3); 
+    margin-top: 20pt;
+    margin-bottom: 20pt;
+}
+
+img {
+    max-width: 95%;
+    max-height: 300pt;
+    margin-top: 10pt;
+    border: solid 1px rgba(43, 34, 29, 0.3); 
+    border-radius: 20pt;
+    box-shadow: 0 0 3px 3px rgba(43, 34, 29, 0.3); 
+}

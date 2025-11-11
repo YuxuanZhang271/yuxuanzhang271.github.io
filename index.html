@@ -1,294 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Yuxuan Zhang's Homepage</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="index.css">
+        <title>Yuxuan Zhang - NUS</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            button.active {
+                font-weight: bold;
+            }
+            .content-page {
+                display: none; 
+                overflow: auto;
+            }
+            .content-page.active {
+                display: block; 
+            }
+        </style>
     </head>
 
     <body>
-        <div id="menu-bar">
-            <a href="#home">Home</a>
-            <a href="#education">Education</a>
-            <a href="#publication">Publication</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#about">About</a>
+        
+        <div style="
+            display: flex; 
+            justify-content: center; 
+            padding-top: 20px; 
+            padding-bottom: 20px; 
+            background-color: rgba(255, 255, 255, 0);
+            
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;">
+
+            <div style="
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+                width: fit-content;
+                border: solid 1px rgb(43, 34, 29); 
+                border-radius: 20px; 
+                box-shadow: 0 0 5px 3px rgb(43, 34, 29); 
+                padding: 1pt; 
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(5px);">
+
+                <button class="nav-button active" data-target="home">Homepage</button>
+                <button class="nav-button" data-target="education">Education</button>
+                <button class="nav-button" data-target="publications">Publications</button>
+                <button class="nav-button" data-target="experience">Experience</button>
+                <button class="nav-button" data-target="projects">Projects</button>
+                <button class="nav-button" data-target="about">About</button>
+
+            </div>
+
         </div>
 
-        <div id="content">
-            <div id="content-space"></div>
+        <div style="
+            display: flex; 
+            justify-content: center; 
+            flex-grow: 1;
+            overflow-y: auto;">
 
-            <div id="home">
-                <div class="space"></div>
-                <img id="profile" src="img/profile.jpeg" alt="" loading="lazy">
-                <h2>Welcome to my page! 👋</h2>
+            <div style="
+                width: 60%; 
+                margin-top: 50pt;
+                justify-content: center;">
 
-                <p>I’m a Master’s student in Artificial Intelligence Systems at National University of Singapore, with a strong interest in <strong>robotics</strong>, <strong>computer vision</strong> and <strong>human-robot interaction</strong>. </p>
-                <p>Feel free to explore my page. For your reference, I'm now working on <strong>PhD application for Fall 2026</strong>, so if you want me, please <a href="#about">contact me</a>! </p>
+                <div id="home" class="content-page active">
+                    <h2>Welcome 🤗</h2>
+                    <p>Hi, this is Yuxuan Zhang from China 🇨🇳. </p>
+                    <p>
+                        I am currently pursuing my Master's degree at the <a href="https://nus.edu.sg">National University of Singapore</a>. 
+                        I completed my undergraduate studies at the <a href="http://en.hit.edu.cn">Harbin Institute of Technology</a>.
+                    </p>
+                    <!-- <p>
+                        I got work experience at AMD and A*STAR.
+                    </p> -->
+                </div>
+
+                <div id="education" class="content-page">
+                    <h2>Education 📖</h2>
+                    <ul>
+                        <li>
+                            Master in Artificial Intelligence Systems <br>
+                            Aug, 2025 - Aug, 2026 <br>
+                            <ul>
+                                <li>GPA: TBD</li>
+                                <li>Courses: Machine Reasoning Systems, Pattern Recognition Systems, Intelligent Robotics Systems, Intelligent Sensing Systems, Practical Language Processing</li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Graduate Diploma in System Analysis <br>
+                            Jul, 2023 - Jan, 2025
+                            <ul>
+                                <li>GPA: 4.11 / 5.0</li>
+                                <li>Courses: Software Analysis \& Design, Machine Learning, Web Application Development, Mobile Application Development</li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Bachelor in Intelligent Test and Control Engineering <br>
+                            Sept, 2020 - Jun, 2024
+                            <ul>
+                                <li>GPA: 4.02 / 5.0</li>
+                                <li>Courses: Intelligent Measurement \& Control Systems, Distributed Test \& Control Systems, Intelligent Sensing, Embedded Systems, Artificial Intelligence, Pattern Recognition \& Machine Learning, FPGA Digital Systems, Digital Signal Processing, Microwave Technology</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="publications" class="content-page">
+                    <h2>Publications 📑</h2>
+                    <ul>
+                        <li>
+                            <!-- <a href="">Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings</a> <br> -->
+                            Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings <br>
+                            AAAI 2026 Workshop HCM Submission <br>
+                            Author: Haziq Razali, <span style="font-weight: bold;">Yuxuan Zhang</span>, Qianli Xu, Yiannis Demiris
+                            <ul>
+                                <li>Designed a multi-view RGB-D framework with automated human–object tracking and semantic interaction labeling for collaborative task capture. </li>
+                                <li>Integrated large language models to decompose tasks and guide subtask-conditioned motion synthesis for long-horizon multi-agent collaboration. </li>
+                                <li>Demonstrated improved reconstruction and predictive consistency, establishing a scalable foundation for human–robot interaction and assistive intelligence. </li>
+                            </ul>
+                            <img src="imgs/hu.png" loading="lazy" alt="Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings">
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="https://arxiv.org/abs/2506.17561">VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models</a> <br>
+                            NeurIPS 2025 Workshop EWM Oral <br>
+                            Author: Chongkai Gao, Zixuan Liu, Zhenghao Chi, Junshan Huang, Xin Fei, Yiwen Hou, <span style="font-weight: bold;">Yuxuan Zhang</span>, Yudi Lin, Zhirui Fang, Lin Shao
+                            <ul>
+                                <li>Collected and processed observation-action data by running the PerActBimanual benchmark on the RLBench platform using CoppeliaSim. </li>
+                                <li>Performed visual annotation and semantic labeling for multiple benchmarks, including FurnitureBench, DexArt, Deformable, and Colosseum datasets. </li>
+                            </ul>
+                            <img src="imgs/vla-os.png" loading="lazy" alt="VLA-OS">
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="experience" class="content-page">
+                    <h2>Experience 💼</h2>
+                    <ul>
+                        <li>
+                            Research Intern (Hardware / Software / System Design) @ Advanced Micro Devices (Singapore) Pte Ltd <br>
+                            Mar, 2026 - Aug, 2026
+                        </li>
+                        <hr>
+                        <li>
+                            Humanoid Robotics Development Intern @ FatFish Technology Pte Ltd <br>
+                            Oct, 2026 - Dec, 2026 <br>
+                            <!-- <ul>
+                                <li></li>
+                            </ul> -->
+                        </li>
+                        <hr>
+                        <li>
+                            Research Intern @ AdaComp Lab, National University of Singapore <br>
+                            Jun, 2025 - Sept, 2025
+                        </li>
+                        <hr>
+                        <li>
+                            Research Intern @ I2R, Agency for Science, Technology and Research (A*STAR) <br>
+                            Mar, 2025 - Dec, 2025
+                        </li>
+                        <hr>
+                        <li>
+                            Research & Development Intern @ Changjiang Intelligent Technology Pte Ltd <br>
+                            Jul, 2021 - Aug, 2021
+                        </li>
+                        <hr>
+                        <li>
+                            Game VFX Design Intern @ Boke Network Technology (Hubei) Co Ltd <br>
+                            Jan, 2021 - Feb, 2021
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="projects" class="content-page">
+                    <h2>Projects 💻</h2>
+                    <ul>
+                        <li>
+                            Motion Analysis in Gym <br>
+                            Sept, 2025 - Oct, 2025 <br>
+                            <ul>
+                                <li>Used 4D-Humans for human body tracking, HAMER for human hand tracking. Integrated SMPL model and MANO model into SMPLX model. </li>
+                                <li>Trained a GRU (LSTM) model to classify different exercise types. </li>
+                                <li>Trained AutoEncoders to correct human's motion in the certain exercise. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            AI-Powered Scheduling System <br>
+                            Sept, 2025 - Oct, 2025 <br>
+                            <ul>
+                                <li>Used Evolution Algorithm to train task evaluation model (task attributes as input, predicted energy and pressure as output). </li>
+                                <li>Developed a rule-based (deadline first, priority second) Scheduler to assign the flexible tasks. </li>
+                                <li>Used MongoDB for database, FastAPI for backend, React.js for frontend. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Deploying Gaussian Splatting on Apple Metal Chip <br>
+                            Sept, 2024 - Jan, 2025 <br>
+                            <ul>
+                                <li>Used OpenCV to calibrate the iPhone's camera. </li>
+                                <li>Used RealityKit to pre-generate the scene model as the warmup of Gaussian Splatting, and to generate camera poses instead of COLMAP. </li>
+                                <li>Optimized Gaussian Splatting workflow on Apple's M2 Chip, by transfer C++ to Swift and PyTorch to Metal. </li>
+                                <li>Used Swift for UI. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            CamC: Multi-Platform Camera Price Comparison \& Prediction <br>
+                            Jun, 2024 - Aug, 2024 <br>
+                            <ul>
+                                <li>Trained a kNN model for camera classification, trained SVM models for camera price prediction. </li>
+                                <li>Used MySQL for database, SprintBoot for backend, React.js for web frontend, AndroidSDK for mobile frontend. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Automated Calibration System for A/D Modules <br>
+                            Oct, 2023 - May, 2024 <br>
+                            <ul>
+                                <li>Designed a 16-channel selection circuit, designed the PCB board, soldered the circuit board. </li> 
+                                <li>Developed embedded C firmware to enable RS-232 communication and implement channel selection functionality on the circuit board. </li>
+                                <li>Enabled RS-232 communication to control the selection circuit and calibration source, enabled PXIe communication to read the output of the AD product. </li>
+                                <li>Developed LabVIEW automation to control channel selection, control standard voltage outputs, read AD outputs, and perform AD calibration. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Automated Signal Conditioning Circuit Testing System <br>
+                            Sept 2023 <br>
+                            <ul>
+                                <li>Enabled LAN communication to control instruments for synchronized measurement. </li>
+                                <li>Developed LabVIEW automation. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Automated Drone Docking & Charging Platform <br>
+                            Oct, 2021 - Sept, 2022 <br>
+                            <ul>
+                                <li><span style="font-weight: bold;">Provincial-Level College Students' Innovative Entrepreneurial Training Program</span></li>
+                                <li>Used DJI Matrice 100 aircraft, Manifold 2-C flight control, and OpenMV camera. </li>
+                                <li>Used GPS for general location (&gt;5m), tracked AprilTag for precise location (&lt;5m). </li>
+                                <li>Used DJI OnboardSDK to develope automated landing algorithms. </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            3D Port Reconstruction - Tianjin Port <br>
+                            Oct, 2020 - Sept, 2021 <br>
+                            <ul>
+                                <li>In Unity, imported the satellite elevation map as 3D model, the satellite orthophoto as texture, to construct a 3D scene. Imported interactive objects. </li>
+                                <li>Developed C# scripts to control user perspective, enable object interactions, and simulate dynamic weather effects. </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="about" class="content-page">
+                    <h2>About Me 😎</h2>
+                    <p>To contact me...</p>
+                    <ul>
+                        <li>
+                            Website: 
+                            <ul>
+                                <li>LinkedIn: <a href="www.linkedin.com/in/yuxuanzhang271">www.linkedin.com/in/yuxuanzhang271</a></li>
+                                <li>GitHub: <a href="https://github.com/YuxuanZhang271">https://github.com/YuxuanZhang271</a></li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Email: 
+                            <ul>
+                                <li>School: <a href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu</a></li>
+                                <li>
+                                    Personal: 
+                                    <ul>
+                                        <li>1 _ <a href="mailto:942326836zyx@gmail.com">942326836zyx@gmail.com</a></li>
+                                        <li>2 _ <a href="mailto:942326836@qq.com">942326836@qq.com</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Mobile Phone: 
+                            <ul>
+                                <li>Singapore: (+65) 8941 6785</li>
+                                <li>China: (+86) 189 8605 2810</li>
+                            </ul>
+                        </li>
+                        <hr>
+                        <li>
+                            Address: 
+                            <ul>
+                                <li>Singapore: #01-15, 28 West Coast Road, Singapore 127449</li>
+                                <li>China: #38-01, Block 21, Poly New Wuchang, Hongshan District, Wuhan City, Hubei Province, China 430070</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            
             </div>
 
-            <hr>
-
-            <div id="education">
-                <div class="space"></div>
-                <h2>Education 📖</h2>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Master in Artificial Intelligent Systems</span>
-                        <span>Aug 2025 - Present</span>
-                    </div>
-                    <div class="meta">
-                        <span>National University of Singapore</span>
-                        <span>Singapore</span>
-                    </div>
-                    <ul>
-                        <li>GPA: Nil</li>
-                        <li>Courses: Machine Reasoning, Pattern Recognition, Intelligent Robotic Systems, Practical Language Processing</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Graduate Diploma in System Analysis</span>
-                        <span>Jul 2023 - Jan 2025</span>
-                    </div>
-                    <div class="meta">
-                        <span>National University of Singapore</span>
-                        <span>Singapore</span>
-                    </div>
-                    <ul>
-                        <li>GPA: 4.11 / 5.0</li>
-                        <li>Courses: Software Analysis & Design, Machine Learning, Web Application Development, Mobile Application Development</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Bachelor in Intelligent Test & Control Engineering</span>
-                        <span>Sep 2020 - Jun 2024</span>
-                    </div>
-                    <div class="meta">
-                        <span>Harbin Institute of Technology</span>
-                        <span>Harbin, Heilongjiang, China</span>
-                    </div>
-                    <ul>
-                        <li>GPA: 4.02 / 5.0</li>
-                        <li>Courses: Intelligent Measurement & Control Systems, Distributed Test & Control Systems, Intelligent Sensing, Embedded Systems, Artificial Intelligence, Pattern Recognition & Machine Learning, FPGA Digital Systems, Digital Signal Processing, Microwave Technology</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr>
-
-            <div id="publication">
-                <div class="space"></div>
-                <h2>Publication 📝</h2>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models</span>
-                        <span>May 2025</span>
-                    </div>
-                    <div class="meta">
-                        <span>NeurIPS 2025 Workshop EWM, CoRL 2025 GenPriors Workshop</span>
-                        <span>LinS Lab @ NUS</span>
-                    </div>
-                    <ul>
-                        <li>Authors: Chongkai Gao, Zixuan Liu, Zhenghao Chi, Junshan Huang, Xin Fei, Yiwen Hou, <span style="font-weight: bold;">Yuxuan Zhang</span>, Yudi Lin, Zhirui Fang, Lin Shao</li>
-                        <li>Collected and processed observation-action data by running the PerActBimanual benchmark on the RLBench platform using CoppeliaSim.</li>
-                        <li>Performed visual annotation and semantic labeling for multiple benchmarks, including FurnitureBench, DexArt, Deformable, and Colosseum datasets.</li>
-                    </ul>
-                    <a href="https://arxiv.org/abs/2506.17561"><u>arXiv</u></a>, <a href="https://nus-lins-lab.github.io/vlaos/"><u>Homepage</u></a>, <a href="https://github.com/HeegerGao/VLA-OS"><u>GitHub</u></a>, <a href="https://huggingface.co/datasets/Linslab/VLA-OS-Dataset"><u>Dataset</u></a>, <a href="https://huggingface.co/Linslab/VLA-OS"><u>Model</u></a>
-                </div>
-            </div>
-
-            <hr>
-
-            <div id="projects">
-                <div class="space"></div>
-                <h2>Projects 🧑🏻‍💻</h2>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Deploying Gaussian Splatting on Apple Metal</span>
-                        <span>Sep 2024 – Jan 2025</span>
-                    </div>
-                    <div class="meta">
-                        <span>Internship Project, NUS ISS</span>
-                        <span>Singapore</span>
-                    </div>
-                    <ul>
-                        <li>Utilized OpenCV for camera distortion correction and LiDAR for point cloud modeling and camera pose estimation.</li>
-                        <li>Translated C++ to Swift, replacing PyTorch and OpenCV with Apple’s simd and Metal frameworks for performance optimization.</li>
-                        <li>Developed a Swift-based UI for interactive visualization and user control.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">CamC: Multi-Platform Camera Price Comparison & Prediction</span>
-                        <span>Jun 2024 - Aug 2024</span>
-                    </div>
-                    <div class="meta">
-                        <span>Capstone Project, NUS ISS</span>
-                        <span>Singapore</span>
-                    </div>
-                    <ul>
-                        <li>Developed a Spring Boot REST API with MySQL for data storage and JSON-based data exchange.</li>
-                        <li>Built a React.js web app and an Android SDK-based mobile app for price comparison and prediction.</li>
-                        <li>Implemented hierarchical clustering for camera categorization and SVM for price prediction.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Automated Calihration System for A/D Modules</span>
-                        <span>Oct 2023 - May 2024</span>
-                    </div>
-                    <div class="meta">
-                        <span>Undergraduate Thesis (Design), HIT</span>
-                        <span>Harbin, Heilongjiang, China</span>
-                    </div>
-                    <ul>
-                        <li>Designed a 16-channel line selection module using a microcontroller for high-precision voltage output.</li>
-                        <li>Integrated with PXI chassis and a Fluke 5500A calihration source for automated calihration.</li>
-                        <li>Developed LabVIEW-based software for calihration control and data fitting, reducing calihration error to 0.001V.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Semi-Automated Drone Docking & Charging Platform</span>
-                        <span>Oct 2021 - Sep 2022</span>
-                    </div>
-                    <div class="meta">
-                        <span>College Students' Innovative Entrepreneurial Training, HIT</span>
-                        <span>Harbin, Heilongjiang, China</span>
-                    </div>
-                    <ul>
-                        <li>Integrated DJI Matrice 100 with Manifold 2-C onboard computer, OpenMV camera for marker detection, and wireless charging modules.</li>
-                        <li>Developed a Linux-based system with DJI OnboardSDK and ROS to enable autonomous flight control.</li>
-                        <li>Implemented marker-guided landing, reducing manual intervention and enhancing operational efficiency.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">3D Port Reconstruction - Tianjin Port</span>
-                        <span>Oct 2020 - Sep 2021</span>
-                    </div>
-                    <div class="meta">
-                        <span>Freshman Year Project, HIT</span>
-                        <span>Harbin, Heilongjiang, China</span>
-                    </div>
-                    <ul>
-                        <li>Import the satellite elevation map into Unity as a platform model, and import the satellite orthophoto into Unity as a platform texture. Add elements such as containers and equipment to enrich the scene. Use a head-mounted VR device as the output.</li>
-                        <li>Write C\# scripts to enable the character to move and rotate their view, and to interact with objects in the scene (such as picking up and throwing). Simulate real-world weather and effects (such as rain, ocean waves, and explosions).</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr>
-
-            <div id="experience">
-                <div class="space"></div>
-                <h2>Experience 🤓</h2>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">RDog-V2: Handling Collaborative Tasks in Daily Life of Visually Impaired People</span>
-                        <span>Jun 2025 - Present</span>
-                    </div>
-                    <div class="meta">
-                        <span>Research Intern, AdaComp@NUS</span>
-                        <span>Singapore</span>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Human-Behaviour Understanding in Collaborative Task-Based Settings</span>
-                        <span>Mar 2025 - Present</span>
-                    </div>
-                    <div class="meta">
-                        <span>Research Intern, A*STAR I2R</span>
-                        <span>Singapore</span>
-                    </div>
-                    <ul>
-                        <li>Developed a multi-view RGBD tracking framework using Orbbec Femto Bolt cameras, enabling synchronized recording and 3D triangulation-based fusion.</li>
-                        <li>Generated pseudo ground truths and performed pose estimation and forecasting for human and object motion.</li>
-                        <li>Deployed camera for bimanual manipulation tracking and implemented pose tracking algorithms using existing repositories.</li>
-                        <li>Delivered executable scripts for pipeline deployment and evaluation.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Automated Rust Removal System</span>
-                        <span>Jul 2021 - Aug 2021</span>
-                    </div>
-                    <div class="meta">
-                        <span>R & D Intern, Changjiang Intelligent Technology Group</span>
-                        <span>Wuhan, Hubei, China</span>
-                    </div>
-                    <ul>
-                        <li>Developed stereo vision for 3D point cloud modeling and implemented a laser robotic arm for automated rust removal.</li>
-                        <li>Utilized OpenCV for stereo image alignment, PCL for point cloud processing, and A* path planning for robotic arm control.</li>
-                        <li>Designed an automated steel rust removal system integrating a conveyor belt for steel transport.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <span class="name">Unity Game VFX Developer Position</span>
-                        <span>Jan 2021 - Feb 2021</span>
-                    </div>
-                    <div class="meta">
-                        <span>Game VFX Intern, Boke Network Technology (Hubei) Co., Ltd.</span>
-                        <span>Wuhan, Hubei, China</span>
-                    </div>
-                    <ul>
-                        <li>Creating game visual effects using the particle system in Unity, as well as modeling with Blender and making textures with Photoshop.</li>
-                        <li>Creating effect trigger mechanisms using C# scripts in Unity, and developing custom effects through shader programming.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr>
-
-            <div id="about">
-                <div class="space"></div>
-                <h2>About Me 😆</h2>
-
-                <div class="item">
-                    <div class="subtitle">
-                        <p>
-                            You can contact me in following ways: <br> <br>
-                            Email: <br> 
-                            &emsp;&emsp; 📧 <a href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu (NUS)</a>, <br> 
-                            &emsp;&emsp; 📧 <a href="mailto:942326836zyx@gmail.com">942326836zyx@gmail.com (Personal)</a> <br>
-                            Websites: <br>
-                            &emsp;&emsp; <a href="www.linkedin.com/in/yuxuanzhang271"><u>LinkedIn</u></a>
-                            &emsp;&emsp; <a href="https://github.com/yuxuanzhang271"><u>GitHub</u></a>
-                            &emsp;&emsp; <a href="https://yuxuanzhang271.github.io"><u>Homepage</u></a> <br>
-                            Mobile Phone: <br> 
-                            &emsp;&emsp; ☎️ (+65) 89416785 (Singapore), <br> 
-                            &emsp;&emsp; ☎️ (+86) 18986052810 (China) <br>
-                            Address: <br>
-                            &emsp;&emsp; 📍28 West Coast Road, Singapore 127449
-                        </p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8006268623612!2d103.76489607564527!3d1.294132661751002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1afbbbed1e3f%3A0x6e9a5acbc8f16a8!2sVarsity%20Park%20Condominium!5e0!3m2!1sen!2ssg!4v1750179432460!5m2!1sen!2ssg" width="450" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-                <p>Besides study and work, I got some hobbies, including photography 📷, basketball 🏀, guitar 🎸 and painting ✍️, etc. Other sports like working out 🏋️, swimming 🏊, badminton 🏸 and table tennis 🏓 are also good to me. </p>
-            </div>
-
-            <div class="space"></div>
         </div>
 
-        <script type="module" defer src="index.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                const buttons = document.querySelectorAll('.nav-button');
+                const pages = document.querySelectorAll('.content-page');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        
+                        const targetId = button.dataset.target;
+                        
+                        buttons.forEach(btn => btn.classList.remove('active'));
+                        pages.forEach(page => page.classList.remove('active'));
+
+                        button.classList.add('active');
+                        
+                        const targetPage = document.getElementById(targetId);
+                        if (targetPage) {
+                            targetPage.classList.add('active');
+                        }
+                    });
+                });
+
+            });
+        </script>
     </body>
 </html>
