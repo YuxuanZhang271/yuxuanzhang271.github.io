@@ -4,11 +4,31 @@ body {
     color: rgb(43, 34, 29); 
     transition: text-shadow 0.3s ease-in-out;
 
-    margin: 0; /* 移除默认边距 */
-    height: 100vh; /* 使 body 占满整个视口高度 */
-    display: flex; /* 使用 flex 布局 */
-    flex-direction: column; /* 垂直排列子元素 (导航 + 内容) */
-    overflow: hidden; /* 隐藏 body 本身的滚动条 */
+    margin: 0; 
+    height: auto; 
+    display: flex; 
+    flex-direction: column; 
+    /* overflow: hidden;  */
+    overflow-y: auto;
+}
+
+body::before {
+    content: "";
+
+    background-image: url("imgs/gallery/000039640021.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    opacity: 0.2;
+    z-index: -1;
 }
 
 a {
@@ -46,10 +66,12 @@ hr {
     margin-bottom: 20pt;
 }
 
-img {
+img, iframe {
     max-width: 95%;
     max-height: 300pt;
-    margin-top: 10pt;
+    margin-top: 15pt;
+    margin-left: 5pt;
+    
     border: solid 1px rgba(43, 34, 29, 0.3); 
     border-radius: 20pt;
     box-shadow: 0 0 3px 3px rgba(43, 34, 29, 0.3); 

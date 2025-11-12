@@ -28,12 +28,40 @@
 
             .content-page {
                 display: none; 
-                overflow: auto;
+                /* overflow: auto; */
             }
 
             .content-page.active {
                 display: block; 
                 animation: fadeIn 0.4s ease-out;
+            }
+
+            .gallery img {
+                max-width: 95%;
+                max-height: 200pt;
+                margin-top: 15pt;
+                margin-left: 15pt;
+
+                border: solid 1px rgba(43, 34, 29, 0.3); 
+                border-radius: 20pt;
+                box-shadow: 0 0 3px 3px rgba(43, 34, 29, 0.3); 
+
+                position: relative;
+                opacity: 0;
+                animation: fadeIn 0.5s ease-out forwards;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05); 
+                box-shadow: 0 4px 10px 5px rgba(43, 34, 29, 0.4); 
+
+                z-index: 10;
+            }
+
+            #load-more-trigger {
+                width: 100%;
+                height: 50px; /* 一个不可见的触发区域 */
             }
         </style>
     </head>
@@ -78,9 +106,7 @@
 
         <div style="
             display: flex; 
-            justify-content: center; 
-            flex-grow: 1;
-            overflow-y: auto;">
+            justify-content: center;">
 
             <div style="
                 width: 60%; 
@@ -94,6 +120,14 @@
                         I am currently pursuing my Master's degree at the <a href="https://nus.edu.sg">National University of Singapore</a>. 
                         I completed my undergraduate studies at the <a href="http://en.hit.edu.cn">Harbin Institute of Technology</a>.
                     </p>
+                    <p>
+                        My research interests focus on Robotics, Computer Vision and HCI. 
+                        For more detailed information you can check my <button class="nav-button" data-target="publications" style="padding-left: 0; padding-right: 0;">publications</button>, <button class="nav-button" data-target="experience" style="padding-left: 0; padding-right: 0;">experience</button> and <button class="nav-button" data-target="projects" style="padding-left: 0; padding-right: 0;">projects</button>. 
+                    </p>
+                    <br>
+                    <p>
+                        Always looking for a PhD opportunity... 🥲
+                    </p>
                     <!-- <p>
                         I got work experience at AMD and A*STAR.
                     </p> -->
@@ -104,7 +138,8 @@
                     <ul>
                         <li>
                             <span style="font-weight: bold;">Master in Artificial Intelligence Systems</span> <br>
-                            Aug, 2025 - Aug, 2026 <br>
+                            National University of Singapore <br>
+                            Aug, 2025 - Aug, 2026
                             <ul>
                                 <li>GPA: TBD</li>
                                 <li>Courses: Machine Reasoning Systems, Pattern Recognition Systems, Intelligent Robotics Systems, Intelligent Sensing Systems, Practical Language Processing</li>
@@ -113,19 +148,21 @@
                         <hr>
                         <li>
                             <span style="font-weight: bold;">Graduate Diploma in System Analysis</span> <br>
+                            National University of Singapore <br>
                             Jul, 2023 - Jan, 2025
                             <ul>
                                 <li>GPA: 4.11 / 5.0</li>
-                                <li>Courses: Software Analysis \& Design, Machine Learning, Web Application Development, Mobile Application Development</li>
+                                <li>Courses: Software Analysis & Design, Machine Learning, Web Application Development, Mobile Application Development</li>
                             </ul>
                         </li>
                         <hr>
                         <li>
                             <span style="font-weight: bold;">Bachelor in Intelligent Test and Control Engineering</span> <br>
+                            Harbin Institute of Technology <br>
                             Sept, 2020 - Jun, 2024
                             <ul>
                                 <li>GPA: 4.02 / 5.0</li>
-                                <li>Courses: Intelligent Measurement \& Control Systems, Distributed Test \& Control Systems, Intelligent Sensing, Embedded Systems, Artificial Intelligence, Pattern Recognition \& Machine Learning, FPGA Digital Systems, Digital Signal Processing, Microwave Technology</li>
+                                <li>Courses: Intelligent Measurement & Control Systems, Distributed Test & Control Systems, Intelligent Sensing, Embedded Systems, Artificial Intelligence, Pattern Recognition & Machine Learning, FPGA Digital Systems, Digital Signal Processing, Microwave Technology</li>
                             </ul>
                         </li>
                     </ul>
@@ -140,9 +177,11 @@
                             AAAI 2026 Workshop HCM Submission <br>
                             Author: Haziq Razali, <span style="font-weight: bold;">Yuxuan Zhang</span>, Qianli Xu, Yiannis Demiris
                             <ul>
-                                <li>Designed a multi-view RGB-D framework with automated human–object tracking and semantic interaction labeling for collaborative task capture. </li>
-                                <li>Integrated large language models to decompose tasks and guide subtask-conditioned motion synthesis for long-horizon multi-agent collaboration. </li>
-                                <li>Demonstrated improved reconstruction and predictive consistency, establishing a scalable foundation for human–robot interaction and assistive intelligence. </li>
+                                <li>Proposed a novel framework to address the lack of collaborative (multi-human) interaction datasets, integrating multi-view RGBD data collection with LLM-based reasoning. </li>
+                                <li>Designed a data capture setup using wide-view and close-up RGBD cameras for markerless 3D reconstruction of human and object motion. </li>
+                                <li>Utilized SOTA models for tracking, including 4D-Humans (body), HaMeR (hands), and SAM-6D (object), to generate temporally aligned 3D meshes from RGBD streams. </li>
+                                <li>Employed Large Language Models (LLMs) to infer collaborative intent, parse complex tasks (e.g., "set the table") into semantic subtasks, and allocate roles to participants. </li>
+                                <li>Used the LLM-generated task decomposition to guide a generative model, enabling the synthesis of long-horizon, collaborative human-object interaction sequences. </li>
                             </ul>
                             <img src="imgs/hu.png" loading="lazy" alt="Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings">
                         </li>
@@ -152,8 +191,10 @@
                             NeurIPS 2025 Workshop EWM Oral <br>
                             Author: Chongkai Gao, Zixuan Liu, Zhenghao Chi, Junshan Huang, Xin Fei, Yiwen Hou, <span style="font-weight: bold;">Yuxuan Zhang</span>, Yudi Lin, Zhirui Fang, Lin Shao
                             <ul>
-                                <li>Collected and processed observation-action data by running the PerActBimanual benchmark on the RLBench platform using CoppeliaSim. </li>
-                                <li>Performed visual annotation and semantic labeling for multiple benchmarks, including FurnitureBench, DexArt, Deformable, and Colosseum datasets. </li>
+                                <li>Proposed VLA-OS, a unified architecture suite, to systematically dissect and compare different planning paradigms and representations in VLA models. </li>
+                                <li>Analyzed and benchmarked three mainstream VLA paradigms: ActionOnly-VLA, Integrated-VLA, and Hierarchical-VLA. </li>
+                                <li>Designed and evaluated three distinct task planning representations: Language Reasoning, Visual Reasoning (e.g., bounding boxes, affordance), and Image Foresight (goal images). </li>
+                                <li>Demonstrated experimentally that the Hierarchical-VLA paradigm generally achieves superior performance and that visually grounded planning representations outperform language-based representations. </li>
                             </ul>
                             <img src="imgs/vla-os.png" loading="lazy" alt="VLA-OS">
                         </li>
@@ -233,12 +274,13 @@
                         </li>
                         <hr>
                         <li>
-                            <span style="font-weight: bold;">CamC: Multi-Platform Camera Price Comparison \& Prediction</span> <br>
+                            <span style="font-weight: bold;">CamC: Multi-Platform Camera Price Comparison & Prediction</span> <br>
                             Jun, 2024 - Aug, 2024 <br>
                             <ul>
                                 <li>Trained a kNN model for camera classification, trained SVM models for camera price prediction. </li>
                                 <li>Used MySQL for database, SprintBoot for backend, React.js for web frontend, AndroidSDK for mobile frontend. </li>
                             </ul>
+                            <img src="imgs/camc.png" loading="lazy" alt="CamC: Multi-Platform Camera Price Comparison & Prediction">
                         </li>
                         <hr>
                         <li>
@@ -250,6 +292,7 @@
                                 <li>Enabled RS-232 communication to control the selection circuit and calibration source, enabled PXIe communication to read the output of the AD product. </li>
                                 <li>Developed LabVIEW automation to control channel selection, control standard voltage outputs, read AD outputs, and perform AD calibration. </li>
                             </ul>
+                            <img src="imgs/ad.png" loading="lazy" alt="Automated Calibration System for A/D Modules">
                         </li>
                         <hr>
                         <li>
@@ -290,8 +333,8 @@
                         <li>
                             Website: 
                             <ul>
-                                <li>LinkedIn: <a href="www.linkedin.com/in/yuxuanzhang271">www.linkedin.com/in/yuxuanzhang271</a></li>
-                                <li>GitHub: <a href="https://github.com/YuxuanZhang271">https://github.com/YuxuanZhang271</a></li>
+                                <li>LinkedIn: <a href="https://www.linkedin.com/in/yuxuanzhang271">www.linkedin.com/in/yuxuanzhang271</a></li>
+                                <li>GitHub: <a href="https://github.com/YuxuanZhang271">github.com/YuxuanZhang271</a></li>
                             </ul>
                         </li>
                         <hr>
@@ -299,32 +342,19 @@
                             Email: 
                             <ul>
                                 <li>School: <a href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu</a></li>
-                                <li>
-                                    Personal: 
-                                    <ul>
-                                        <li>1 _ <a href="mailto:942326836zyx@gmail.com">942326836zyx@gmail.com</a></li>
-                                        <li>2 _ <a href="mailto:942326836@qq.com">942326836@qq.com</a></li>
-                                    </ul>
-                                </li>
+                                <li>Personal: <a href="mailto:942326836zyx@gmail.com">942326836zyx@gmail.com</a></li>
                             </ul>
                         </li>
                         <hr>
                         <li>
-                            Mobile Phone: 
-                            <ul>
-                                <li>Singapore: (+65) 8941 6785</li>
-                                <li>China: (+86) 189 8605 2810</li>
-                            </ul>
-                        </li>
-                        <hr>
-                        <li>
-                            Address: 
-                            <ul>
-                                <li>Singapore: #01-15, 28 West Coast Road, Singapore 127449</li>
-                                <li>China: #38-01, Block 21, Poly New Wuchang, Hongshan District, Wuhan City, Hubei Province, China 430070</li>
-                            </ul>
+                            Address: #01-15, 28 West Coast Road, Singapore 127449
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7997078174403!2d103.76500747560303!3d1.294716898692994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1afb8e2fc2a1%3A0xcb9b0bde9afe88fe!2s28%20W%20Coast%20Rd%2C%20Singapore%20127449!5e0!3m2!1sen!2ssg!4v1762914406621!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </li>
                     </ul>
+                    <hr>
+                    <h2>Gallery</h2>
+                    <div class="gallery"></div>
+                    <div id="load-more-trigger"></div>
                 </div>
             
             </div>
@@ -337,6 +367,83 @@
                 const buttons = document.querySelectorAll('.nav-button');
                 const pages = document.querySelectorAll('.content-page');
 
+                let isGalleryInitialized = false;
+                const galleryContainer = document.querySelector('.gallery');
+                const observerTarget = document.getElementById('load-more-trigger');
+                let observer;
+                const allImageFiles = [
+                    '000039640003.jpeg', 
+                    '000039640004.jpeg', 
+                    '000039640007.jpeg',
+                    '000039640014.jpeg', 
+                    '000039640021.jpeg', 
+                    '000039640030.jpeg',
+                    '000039640031.jpeg',
+                    '000039640032.jpeg',
+                ];
+                let shuffledImages = [];
+                let currentIndex = 0;
+                const batchSize = 10;
+
+                function shuffleArray(array) {
+                    let m = array.length, t, i;
+                    while (m) {
+                        i = Math.floor(Math.random() * m--);
+                        t = array[m];
+                        array[m] = array[i];
+                        array[i] = t;
+                    }
+                    return array;
+                }
+
+                function loadNextBatch() {
+                    const batch = shuffledImages.slice(currentIndex, currentIndex + batchSize);
+                    
+                    if (batch.length === 0) {
+                        if (observer) observer.disconnect();
+                        if (observerTarget) observerTarget.style.display = 'none';
+                        return;
+                    }
+
+                    batch.forEach(fileName => {
+                        const img = document.createElement('img');
+                        img.src = 'imgs/gallery/' + fileName;
+                        img.alt = 'Gallery image';
+                        img.loading = 'lazy';
+                        
+                        galleryContainer.appendChild(img);
+                    });
+
+                    currentIndex += batchSize;
+                }
+
+                function initGallery() {
+                    if (isGalleryInitialized) return;
+                    isGalleryInitialized = true;
+                    
+                    galleryContainer.innerHTML = ''; 
+                    shuffledImages = shuffleArray([...allImageFiles]);
+                    currentIndex = 0;
+
+                    const options = {
+                        root: null,
+                        rootMargin: '0px',
+                        threshold: 0.1
+                    };
+
+                    observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting) {
+                            loadNextBatch();
+                        }
+                    }, options);
+
+                    if (observerTarget) {
+                        observer.observe(observerTarget);
+                    } else {
+                        loadNextBatch();
+                    }
+                }
+
                 buttons.forEach(button => {
                     button.addEventListener('click', () => {
                         
@@ -345,15 +452,27 @@
                         buttons.forEach(btn => btn.classList.remove('active'));
                         pages.forEach(page => page.classList.remove('active'));
 
-                        button.classList.add('active');
+                        buttons.forEach(btn => {
+                            if (btn.dataset.target === targetId) {
+                                btn.classList.add('active');
+                            }
+                        });
                         
                         const targetPage = document.getElementById(targetId);
                         if (targetPage) {
                             targetPage.classList.add('active');
                         }
+
+                        if (targetId === 'about') {
+                            initGallery();
+                        }
                     });
                 });
 
+                const initialActivePage = document.querySelector('.content-page.active');
+                if (initialActivePage && initialActivePage.id === 'about') {
+                    initGallery();
+                }
             });
         </script>
     </body>
