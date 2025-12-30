@@ -1,0 +1,231 @@
+/* --- 全局重置与基础设置 --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+    /* --- 修改：使用 Montserrat 字体 --- */
+    font-family: 'Montserrat', sans-serif;
+    /* ------------------------------- */
+    
+    /* 字体优化：让字体在 Mac 上显示更清晰 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: transparent; 
+}
+
+/* --- 层级 1: 最底层背景图 --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 关键：把背景图放在最最底层 */
+    z-index: -3; 
+    
+    background-image: url('imgs/finger_pointing_meme.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* --- 【新增】层级 2: 全局模糊层 --- */
+#global-blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 放在背景图上面，但文字内容下面 */
+    z-index: -2; 
+    
+    /* 预设模糊效果 */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    /* 默认隐藏 (第一屏时) */
+    opacity: 0;
+    
+    /* 核心：1.2秒的平滑过渡 */
+    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    
+    /* 避免遮挡鼠标点击 */
+    pointer-events: none; 
+}
+
+/* 当 body 有 blur-mode 类时，显示模糊层 */
+body.blur-mode #global-blur-layer {
+    opacity: 1;
+}
+
+/* --- 层级 3: 滚动内容 --- */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    
+    /* 注意：这里改为全透明，不再设置半透明黑底 */
+    /* 因为黑底现在由 #global-blur-layer 统一管理 */
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* --- 内容容器与动画 --- */
+.section > .content-wrapper {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+
+    /* 布局修正：左对齐但整体居中 */
+    text-align: left;
+    padding: 40px;
+    
+    /* 宽度限制优化：防止在大屏太宽，在手机太窄 */
+    width: fit-content; 
+    max-width: 500px;  
+}
+
+.section.active > .content-wrapper {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- 右侧导航点 --- */
+.nav-dots {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dot {
+    display: block;
+    width: 4px; /*稍微调大一点点方便点击*/
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none;
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dot.active {
+    background-color: #fff;
+    transform: scale(1.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- 链接样式 --- */
+.content-wrapper a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.content-wrapper a:hover {
+    opacity: 0.8;
+}
+
+/* 演示用的 address 标签简单修正 */
+address {
+    font-style: normal;
+    display: inline;
+}
+
+/* --- Section 3 专用布局 --- */
+
+/* 1. 网格容器：强制三列并排 */
+.info-grid {
+    display: grid;
+    /* 1fr 1fr 1fr 表示三列等宽分配空间 */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 30px; /* 列与列之间的间距 */
+    
+    /* 关键：顶端对齐！防止因为内容长短不一导致标题错位 */
+    align-items: start; 
+    
+    width: 100%;
+    text-align: left;
+}
+
+/* 2. 单个格子内的标题 */
+.grid-item h3 {
+    /* 关键：清除默认上边距，保证三个标题绝对在同一水平线上 */
+    margin-top: 0; 
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+
+/* 3. 列表美化（去掉默认圆点，改为块状显示） */
+.info-list {
+    list-style: none; /* 去掉前面的黑点 */
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    margin-bottom: 15px;
+    /* 给每个条目加一个半透明背景，更有层次感 */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.info-list strong {
+    display: block;
+    font-size: 1.0em;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+.info-list span {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* --- 手机端适配 (重要) --- */
+/* 屏幕小于 768px 时，自动变回竖向排列，防止挤压 */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr; /* 变回单列 */
+    }
+}

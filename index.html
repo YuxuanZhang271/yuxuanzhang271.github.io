@@ -1,13 +1,190 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample HTML Page</title>
+    <title>Yuxuan Zhang's Homepage</title>
+
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
+    <div id="global-blur-layer"></div>
+
+    <div class="nav-dots">
+        <a href="#section-1" class="dot active"></a>
+        <a href="#section-2" class="dot"></a>
+        <a href="#section-3" class="dot"></a>
+    </div>
+
+    <div class="scroll-container">
+        
+        <section id="section-1" class="section section-1">
+            <div class="content-wrapper">
+                <img src="imgs/profile_photo.jpeg" alt="Avatar" class="avatar">
+            </div>
+        </section>
+        
+        <section id="section-2" class="section section-2">
+            <div class="content-wrapper" style="border: solid 3px rgba(255, 255, 255, 1.0);">
+                <h2>🤗 Welcome to my homepage! </h2>
+                
+                <br>
+                
+                <p>My name is Yuxuan Zhang, and I am currently a Master's student in Artificial Intelligence Systems at <a href="https://www.nus.edu.sg/">National University of Singapore</a>. I received my Bachelor's degree in Intelligent Test & Control Engineering from the <a href="https://www.hit.edu.cn/">Harbin Institute of Technology</a>. </p>
+                <p>My research interests include robotics, embodied intelligence, computer vision, and human-robot interaction. </p>
+                <p>I am always looking for a PhD position for Fall 2026 or 2027. Feel free to contact me if you have any opportunities! </p>
+                
+                <br>
+                
+                <p>📫 Email: <a href="mailto:e1216649@u.nus.edu">e1216649@u.nus.edu</a></p>
+                <p>☎️ Contact: (+65) 8941 6785</p>
+                <p><address>28 West Coast Rd, Singapore 127449</address></p>
+
+                <br>
+
+                <p><a href="https://github.com/yuxuanzhang271">Github</a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/yuxuanzhang271/">LinkedIn</a></p>
+            </div>
+        </section>
+        
+        <section id="section-3" class="section section-3">
+            <div class="content-wrapper" style="max-width: 90%;">
+                <br>
+                <div class="info-grid">
+                    
+                    <div class="grid-item">
+                        <h3>📖 Publications</h3>
+                        <ul class="info-list">
+                            <li>
+                                <strong><a href="https://arxiv.org/abs/2506.17561">VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models</a></strong>
+                                <span>NeurIPS 2025 Workshop EWM Oral, May 2025</span>
+                            </li>
+                            <!-- <li>
+                                <strong>Another Research Paper Title</strong>
+                                <span>ICRA 2023</span>
+                            </li> -->
+                        </ul>
+                    </div>
+
+                    <div class="grid-item">
+                        <h3>💼 Experience</h3>
+                        <ul class="info-list">
+                            <li>
+                                <strong>Research Intern (Hardware, Software, System Design)</strong>
+                                <span>AMD, Mar 2026 - Aug 2026</span>
+                            </li>
+                            <li>
+                                <strong>Development Intern</strong>
+                                <span>FatFish Technology Pte. Ltd., Oct 2025 - Dec 2025</span>
+                            </li>
+                            <li>
+                                <strong>Human-Behaviour Understanding in Collaborative Task-Based Settings (Research Intern)</strong>
+                                <span>I2R @ A*STAR, Mar 2025 - Dec 2025</span>
+                            </li>
+                            <li>
+                                <strong>RDog-V2: Handling Collaborative Tasks in Daily Life of Visually Impaired People (Research Intern)</strong>
+                                <span>AdaComp @ NUS, Jun 2025 - Sept 2025</span>
+                            </li>
+                            <li>
+                                <strong>Automated Rust Removal System (R&D Intern)</strong>
+                                <span>Changjiang Intelligent Technology Group, Jul 2021 - Aug 2021</span>
+                            </li>
+                            <li>
+                                <strong>Game VFX Intern</strong>
+                                <span>Boke Network Technology (Hubei) Co., Ltd., Jan 2021 - Feb 2021</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid-item">
+                        <h3>🚀 Projects</h3>
+                        <ul class="info-list">
+                            <li>
+                                <strong>Motion Analysis in Gym</strong>
+                                <span>4D-Humans, HaMeR, SMPL/MANO Models, GRU (LSTM), AutoEncoders</span>
+                            </li>
+                            <li>
+                                <strong>AI-Powered Scheduling System</strong>
+                                <span>Evolutionary Algorithms, Rule-based Scheduling, FastAPI, React.js, MongoDB</span>
+                            </li>
+                            <li>
+                                <strong>Deploying Gaussian Splatting on Apple Metal Chip</strong>
+                                <span>Gaussian Splatting, Apple Metal API, RealityKit, Swift, C++, OpenCV</span>
+                            </li>
+                            <li>
+                                <strong>CamC: Multi-Platform Camera Price Comparison & Prediction</strong>
+                                <span>kNN/SVM Models, Spring Boot, React.js, Android SDK, MySQL</span>
+                            </li>
+                            <li>
+                                <strong>Automated Calibration System for A/D Modules</strong>
+                                <span>Embedded C, PCB Design, LabVIEW, RS-232/PXIe Protocols</span>
+                            </li>
+                            <li>
+                                <strong>Automated Signal Conditioning Circuit Testing System</strong>
+                                <span>LabVIEW, LAN Communication, Synchronized Measurement</span>
+                            </li>
+                            <li>
+                                <strong>Automated Drone Docking & Charging Platform</strong>
+                                <span>DJI Onboard SDK, OpenMV, AprilTag Tracking, GPS Integration</span>
+                            </li>
+                            <li>
+                                <strong>3D Port Reconstruction - Tianjin Port</strong>
+                                <span>Unity Engine, C#, VR Deployment</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const dots = document.querySelectorAll('.dot');
+        const options = {
+            root: document.querySelector('.scroll-container'),
+            threshold: 0.6 
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    // 1. 内容动画
+                    entry.target.classList.add('active');
+
+                    // 2. 获取 ID
+                    const id = entry.target.getAttribute('id');
+                    
+                    // 3. 导航点联动
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    const activeDot = document.querySelector(`.dot[href="#${id}"]`);
+                    if (activeDot) {
+                        activeDot.classList.add('active');
+                    }
+
+                    // --- 【核心修改】控制全局模糊层 ---
+                    // 如果是第一屏，移除模糊模式（变清晰）
+                    // 如果是其他屏（2,3...），添加模糊模式
+                    if (id === 'section-1') {
+                        document.body.classList.remove('blur-mode');
+                    } else {
+                        document.body.classList.add('blur-mode');
+                    }
+
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, options);
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
