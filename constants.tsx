@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   department: "School of Computing / ISS",
   email: "e1216649@u.nus.edu",
   location: "Singapore",
-  avatar: "./2.jpeg",
+  avatar: "./profile.jpg",
   bio: "I am a Master's student in Artificial Intelligence Systems at the National University of Singapore. My research interests lie at the intersection of Embodied AI, Robot Learning, and Human-Robot Interaction. I am passionate about developing intelligent agents that can perceive, reason, and interact with the physical world effectively.",
   socials: {
     scholar: "https://yuxuanzhang271.github.io",
