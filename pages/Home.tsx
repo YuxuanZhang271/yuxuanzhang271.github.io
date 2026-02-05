@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MapPin, Building2, ExternalLink, Newspaper, Award, Mic2, FileText, Bot, Box, Users, GraduationCap, Cpu } from 'lucide-react';
+import { MapPin, Building2, Newspaper, FileText, Bot, Box, Users, GraduationCap, Cpu } from 'lucide-react';
 import { PERSONAL_INFO, NEWS, RESEARCH_AREAS } from '../constants';
 
 const IconMap: Record<string, any> = {
@@ -20,6 +20,10 @@ export const Home: React.FC = () => {
             src={PERSONAL_INFO.avatar} 
             alt={PERSONAL_INFO.name} 
             className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white bg-slate-200"
+            onError={(e) => {
+              // 容错处理：如果图片加载失败，显示名字缩写生成的占位头像
+              (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(PERSONAL_INFO.name)}&background=2563eb&color=fff&size=256`;
+            }}
           />
         </div>
         <div className="flex-grow text-center md:text-left">
@@ -41,8 +45,8 @@ export const Home: React.FC = () => {
               Contact Me
             </a>
             <div className="flex gap-4">
-              <a href={PERSONAL_INFO.socials.github} target="_blank" className="p-3 border border-slate-300 rounded-full hover:bg-slate-50"><Cpu size={20} /></a>
-              <a href={PERSONAL_INFO.socials.linkedin} target="_blank" className="p-3 border border-slate-300 rounded-full hover:bg-slate-50"><Users size={20} /></a>
+              <a href={PERSONAL_INFO.socials.github} target="_blank" className="p-3 border border-slate-300 rounded-full hover:bg-slate-50 transition-all hover:border-blue-500 hover:text-blue-500"><Cpu size={20} /></a>
+              <a href={PERSONAL_INFO.socials.linkedin} target="_blank" className="p-3 border border-slate-300 rounded-full hover:bg-slate-50 transition-all hover:border-blue-500 hover:text-blue-500"><Users size={20} /></a>
             </div>
           </div>
         </div>
