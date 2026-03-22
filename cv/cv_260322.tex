@@ -1,0 +1,179 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.55in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern} 
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.18\baselineskip}
+
+% Page style (multi-page academic CV)
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+
+% --- Styling ---
+\definecolor{cvaccent}{HTML}{1F4E79}
+\hypersetup{colorlinks=true, urlcolor=cvaccent, linkcolor=cvaccent}
+
+\titleformat{\section}{\large\bfseries\color{cvaccent}}{}{0pt}{}[\vspace{-0.75em}\color{cvaccent}\rule{\linewidth}{0.6pt}\vspace{-0.2em}]
+\titlespacing*{\section}{0pt}{0.35em}{-0.1em}
+
+% --- Simple CV helpers ---
+\newcommand{\name}[1]{\textbf{\LARGE #1}}
+\newcommand{\contact}[1]{\small #1}
+\newenvironment{cvitems}{%
+  \setlength{\parskip}{0pt}%
+\begin{itemize}[leftmargin=*, itemsep=0.1em, topsep=0em, partopsep=0em, parsep=0pt]}{
+  \end{itemize}}
+\newcommand{\cventry}[4]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}p{0.75\textwidth}@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textit{#4} \\
+    \textit{#2} & #3 \\
+  \end{tabular*}
+  \vspace{-0.4em}
+}
+
+\begin{document}
+
+% ===== Header =====
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  \name{Yuxuan Zhang} & \contact{\href{https://yuxuanzhang271.github.io}{yuxuanzhang271.github.io}}\\
+  \contact{(65) 8941--6785} & \contact{\href{https://github.com/yuxuanzhang271}{github.com/yuxuanzhang271}}\\
+  \contact{\href{mailto:e1216649@u.nus.edu}{e1216649@u.nus.edu}} & \contact{\href{https://www.linkedin.com/in/yuxuanzhang271}{linkedin.com/in/yuxuanzhang271}}\\
+\end{tabularx}
+
+% ===== Skills =====
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Coding:} & Python, C/C++, Bash (Shell), SQL, MATLAB, R, Verilog, Java, C\#, JavaScript/TypeScript \\
+  \textbf{Tools:} & Linux, Git, CMake, Docker, CUDA, ROS/ROS2, PyTorch, TensorFlow, OpenCV, PCL, Open3D, Isaac Gym/Sim, MuJoCo \\
+  & Unity, LabVIEW, Altium Designer, AutoCAD, SolidWorks, Multisim, Keil $\mu$Vision, KiCad \\
+  \textbf{Languages:} & Chinese (native), English (fluent) \\
+\end{tabularx}
+
+% ===== Education =====
+\section{Education}
+\cventry{Master in Artificial Intelligence Systems}{National University of Singapore}{Singapore}{Aug 2025 -- Present}
+\begin{cvitems}
+\item Relevant Coursework: Robotic Systems, Natural Language Processing, Pattern Recognition, Machine Reasoning
+\end{cvitems}
+
+\cventry{Graduate Diploma in System Analysis}{National University of Singapore}{Singapore}{Jul 2023 -- Jan 2025}
+\begin{cvitems}
+\item GPA: \textit{4.11/5.00}. Focus: Machine Learning Infrastructure and Scalable System Design.
+\end{cvitems}
+
+\cventry{Bachelor in Intelligent Test \& Control Engineering}{Harbin Institute of Technology}{China}{Sep 2020 -- Jun 2024}
+\begin{cvitems}
+\item GPA: \textit{4.02/5.00}. Thesis Focus: Precision Measurement, Embedded Systems, and Real-time Distributed Control.
+\end{cvitems}
+
+% ===== Publications =====
+\section{Publications}
+\begin{enumerate}[leftmargin=*, itemsep=0.25em, topsep=0.2em]
+  \item Chongkai Gao, Zixuan Liu, Zhenghao Chi, Junshan Huang, Xin Fei, Yiwen Hou, \textbf{Yuxuan Zhang}, Yudi Lin, Zhirui Fang, Zeyu Jiang, Lin Shao. ``VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models.'' \textit{NeurIPS 2025} (accepted). \href{https://arxiv.org/abs/2506.17561}{arXiv:2506.17561}.
+    \begin{cvitems}
+    \item Developed \textbf{VLA-OS}, a modular framework to evaluate Action-Only, Integrated, and Hierarchical planning paradigms.
+    \item Investigated \textbf{visually-grounded hierarchical planning}, demonstrating its superior zero-shot generalization and long-horizon performance across LIBERO, COLOSSEUM, and DexArt benchmarks.
+    \end{cvitems}
+\end{enumerate}
+
+% ===== Preprints =====
+\section{Preprints}
+\begin{enumerate}[leftmargin=*, itemsep=0.25em, topsep=0.2em]
+  \item \textbf{Yuxuan Zhang}. ``CCTA: Safety- and Capability-Constrained Tool Arbitration for Long-Horizon Embodied Decision Making.'' \textit{Preprint 2026}.
+    \begin{cvitems}
+    \item Proposed \textbf{CCTA}, a hierarchical framework for heterogeneous tool arbitration (VLA, RL, IK) under hard safety and morphology constraints.
+    \item Formulated arbitration as a \textbf{constrained optimization problem}, integrating Control Barrier Functions (CBFs) for safety projection and ROS 2 LifecycleNodes for compute-aware scheduling.
+    \end{cvitems}
+  \item Chongkai Gao, Jieao Shi, Xuchuan Huang, Mu Zhaoyu, \textbf{Yuxuan Zhang}, et al. ``ManiLadder: Benchmarking Manipulation Intelligence Frontier via a Categorized and Multi-Level Task Ladder.'' \textit{CoRL 2026} (Under Review).
+    \begin{cvitems}
+    \item Engineered a \textbf{GPU-accelerated simulation environment} for ManiLadder, featuring 112 tasks with four difficulty tiers.
+    \item Implemented standardized metrics and MILE for rigorous evaluation of manipulation intelligence across diverse robotic embodiments.
+    \end{cvitems}
+  \item Haziq Razali, \textbf{Yuxuan Zhang}, Qianli Xu, Yiannis Demiris. ``Learning to Synthesize Novel Human-Object Interaction in Collaborative Task-Based Settings.'' \textit{AAAI 2026 Workshop HCM Submission}.
+    \begin{cvitems}
+    \item Developed a multi-view perception pipeline using 4D-Humans, HaMeR, and SAM-6D to reconstruct high-fidelity 3D human-object trajectories.
+    \item Investigated \textbf{LLM-guided task decomposition} to facilitate multi-agent motion forecasting and synthesis for long-horizon collaborative tasks.
+    \end{cvitems}
+\end{enumerate}
+
+% ===== Experience =====
+\section{Selected Experience}
+
+\cventry{Research Intern (Hardware / Software / System Design)}{AMD Singapore}{Singapore}{Mar 2026 -- Aug 2026}
+\begin{cvitems}
+  \item Incoming research internship focusing on high-performance system architecture for AI workloads (subject to NDA).
+\end{cvitems}
+
+\cventry{AI Research Intern}{Fatfish AI}{Singapore}{Oct 2025 -- Dec 2025}
+\begin{cvitems}
+\item Developed a ROS2-based end-to-end deployment pipeline for humanoids, integrating MiniPC, RealSense, and Jetson Orin Nano.
+\item Implemented and analyzed \textbf{Sim2Real transfer} of VLA policies for locomotion and manipulation, utilizing RL-based controllers and IK solvers.
+\end{cvitems}
+
+\cventry{Research Intern (Assistive Robotics)}{AdaComp Lab, National University of Singapore}{Singapore}{Jun 2025 -- Sep 2025}
+\begin{cvitems}
+\item Engineered a quadrupedal assistant system (RDog-V2) featuring 360$^\circ$ LiDAR and panoramic vision for blind-aid navigation.
+\item Optimized LiDAR-based \textbf{SLAM and dynamic obstacle avoidance} algorithms to enable safe, autonomous guidance in complex urban settings.
+\end{cvitems}
+
+\cventry{Research Intern (Human-Behaviour Understanding)}{I2R, A*STAR}{Singapore}{Mar 2025 -- Dec 2025}
+\begin{cvitems}
+\item Formulated a data-generation framework for Human-Object Interaction (HOI) by synthesizing multi-view RGB-D data with LLM-based reasoning.
+\item Refined 3D reconstruction techniques to model complex collaborative behaviors, supporting research into human-centric robot learning.
+\end{cvitems}
+
+\cventry{R\&D Intern (Computer Vision)}{Changjiang Intelligent Control Co., Ltd.}{China}{Jul 2021 -- Aug 2021}
+\begin{cvitems}
+\item Designed a stereo-vision system for real-time 3D surface reconstruction and \textbf{6-DoF pose estimation} in automated industrial maintenance.
+\end{cvitems}
+
+\cventry{Tech Art Intern}{Boke City Co., Ltd. (Wuhan Branch)}{China}{Jan 2021 -- Feb 2021}
+\begin{cvitems}
+\item Investigated physics-based character-environment interactions in Unity, focusing on the synthesis of realistic combat visual effects via C\# scripts.
+\end{cvitems}
+
+\section{Selected Projects}
+
+\cventry{Automated Calibration System for A/D Modules}{Undergraduate Thesis, Harbin Institute of Technology}{China}{Oct 2023 -- May 2024}
+\begin{cvitems}
+\item Developed a multi-channel selection system (PCB + Firmware) and automated PXIe-based calibration protocols for high-precision A/D modules.
+\end{cvitems}
+
+\cventry{Autonomous Drone Docking \& Charging Platform}{Innovation Training Program, HIT}{China}{Oct 2021 -- Sep 2022}
+\begin{cvitems}
+\item Engineered a precision landing system (DJI M100 + OpenMV) utilizing \textbf{GPS-denied localization} via AprilTag and PID-based control.
+\end{cvitems}
+
+\cventry{Interactive 3D Port Reconstruction}{Annual Research Project, HIT}{China}{Oct 2020 -- Sep 2021}
+\begin{cvitems}
+\item Synthesized large-scale port environments in Unity using high-resolution heightmaps and satellite data.
+\item Implemented immersive VR interfaces and weather simulation systems to study human-computer interaction in digital twins.
+\end{cvitems}
+
+% \section{References}
+% {\small
+%   \renewcommand{\arraystretch}{1.12}
+%   \begin{tabularx}{\linewidth}{@{}p{0.15\linewidth}XXX@{}}
+%     \textbf{Name} & Lin SHAO & Muhammad Haziq BIN RAZALI & Shengwei MENG \\
+%     \textbf{Affiliation} & National University of Singapore & Agency for Science, Technology and Research & Harbin Institute of Technology \\
+%     \textbf{Email Address} & \href{mailto:linshao@nus.edu.sg}{linshao@nus.edu.sg} & \href{mailto:haziqmr@a-star.edu.sg}{haziqmr@a-star.edu.sg} & \href{mailto:mengsw@hit.edu.cn}{mengsw@hit.edu.cn} \\
+%     \textbf{Phone Number} & (65) 6516-2908 & (65) 9172-2319 & (86) 133-9156-7225 \\
+%     \textbf{Relationship} & Master’s research supervisor & Research internship mentor & Undergraduate thesis supervisor
+%   \end{tabularx}
+% }
+
+\end{document}

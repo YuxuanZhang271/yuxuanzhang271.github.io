@@ -14,6 +14,18 @@
     
     <div id="global-blur-layer"></div>
 
+    <div id="cv-viewer-overlay" aria-hidden="true" hidden>
+        <button id="cv-back-button" aria-label="Back to homepage">←</button>
+        <div class="cv-viewer-frame-wrap">
+            <iframe
+                id="cv-pdf-frame"
+                src="about:blank"
+                title="Yuxuan Zhang CV"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
     <div class="nav-dots">
         <a href="#section-1" class="dot active"></a>
         <a href="#section-2" class="dot"></a>
@@ -36,7 +48,7 @@
                 
                 <p>My name is Yuxuan Zhang, and I am currently a Master's student in Artificial Intelligence Systems at <a href="https://www.nus.edu.sg/">National University of Singapore</a>. I received my Bachelor's degree in Intelligent Test & Control Engineering from the <a href="https://www.hit.edu.cn/">Harbin Institute of Technology</a>. </p>
                 <p>My research interests include robotics, embodied intelligence, computer vision, and human-robot interaction. </p>
-                <p>I am always looking for a PhD position for Fall 2026 or 2027. Feel free to contact me if you have any opportunities! </p>
+                <p>I am always looking for a PhD position for 2026 or 2027. Feel free to contact me if you have any opportunities! </p>
                 
                 <br>
                 
@@ -46,7 +58,7 @@
 
                 <br>
 
-                <p><a href="https://github.com/yuxuanzhang271">Github</a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/yuxuanzhang271/">LinkedIn</a></p>
+                <p><a href="https://github.com/yuxuanzhang271">Github</a> &nbsp;&nbsp; <a href="https://www.linkedin.com/in/yuxuanzhang271/">LinkedIn</a> &nbsp;&nbsp; <a href="cv/cv_260322.pdf" id="open-cv-link">CV</a></p>
             </div>
         </section>
         
@@ -170,6 +182,12 @@
 
     <script>
         const dots = document.querySelectorAll('.dot');
+        const cvOpenLink = document.getElementById('open-cv-link');
+        const cvViewerOverlay = document.getElementById('cv-viewer-overlay');
+        const cvBackButton = document.getElementById('cv-back-button');
+        const cvPdfFrame = document.getElementById('cv-pdf-frame');
+        const cvPdfPath = 'cv/cv_260322.pdf#view=FitH';
+
         const options = {
             root: document.querySelector('.scroll-container'),
             threshold: 0.6 
@@ -209,6 +227,32 @@
 
         document.querySelectorAll('.section').forEach((section) => {
             observer.observe(section);
+        });
+
+        const openCvViewer = (event) => {
+            event.preventDefault();
+            cvViewerOverlay.hidden = false;
+            if (cvPdfFrame.getAttribute('src') !== cvPdfPath) {
+                cvPdfFrame.setAttribute('src', cvPdfPath);
+            }
+            document.body.classList.add('cv-viewer-open');
+            cvViewerOverlay.setAttribute('aria-hidden', 'false');
+        };
+
+        const closeCvViewer = () => {
+            document.body.classList.remove('cv-viewer-open');
+            cvViewerOverlay.setAttribute('aria-hidden', 'true');
+            cvViewerOverlay.hidden = true;
+            cvPdfFrame.setAttribute('src', 'about:blank');
+        };
+
+        cvOpenLink.addEventListener('click', openCvViewer);
+        cvBackButton.addEventListener('click', closeCvViewer);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && document.body.classList.contains('cv-viewer-open')) {
+                closeCvViewer();
+            }
         });
     </script>
 </body>
