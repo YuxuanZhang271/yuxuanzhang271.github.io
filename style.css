@@ -647,3 +647,22 @@ h6 {
   transform: translate(-50%, -0.15rem);
   transition: opacity 140ms ease, transform 140ms ease;
 }
+
+.photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px auto 0;
+}
+
+.photo-gallery img {
+  display: block;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  height: clamp(120px, 14vw, 180px);
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.12);
+}

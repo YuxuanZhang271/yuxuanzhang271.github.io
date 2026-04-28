@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".page-section");
   const coverSection = document.querySelector(".cover-section");
   const placesMap = document.querySelector("#places-map");
+  const photoGallery = document.querySelector(".photo-gallery");
   const mapImage = placesMap?.querySelector("img");
   const mapMarkers = placesMap?.querySelectorAll(".map-location-marker") ?? [];
   let activeSectionId = "cover";
@@ -127,6 +128,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
+  const shuffleGallery = () => {
+    if (!photoGallery) return;
+
+    const photos = Array.from(photoGallery.children);
+
+    for (let index = photos.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [photos[index], photos[randomIndex]] = [photos[randomIndex], photos[index]];
+    }
+
+    photos.forEach((photo) => photoGallery.appendChild(photo));
+  };
+
+  shuffleGallery();
   positionMapMarkers();
   mapImage?.addEventListener("load", positionMapMarkers);
   window.addEventListener("resize", positionMapMarkers);
