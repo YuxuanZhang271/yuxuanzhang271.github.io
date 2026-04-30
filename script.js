@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const placesMap = document.querySelector("#places-map");
   const photoGallery = document.querySelector(".photo-gallery");
   const mapImage = placesMap?.querySelector("img");
-  const mapMarkers = placesMap?.querySelectorAll(".map-location-marker") ?? [];
+  const mapMarkers = placesMap?.querySelectorAll(".academic-marker, .journey-marker") ?? [];
   let activeSectionId = "cover";
   let menuMoveTimer;
 

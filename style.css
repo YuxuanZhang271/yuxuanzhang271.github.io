@@ -574,7 +574,8 @@ h6 {
   }
 }
 
-#places-map .map-location-marker {
+#places-map .academic-marker,
+#places-map .journey-marker {
   position: absolute;
   z-index: 3;
   width: 1rem;
@@ -582,15 +583,28 @@ h6 {
   margin-top: -1.15rem;
   margin-left: -0.5rem;
   border-radius: 50% 50% 50% 0;
-  background: linear-gradient(180deg, rgba(232, 67, 57, 0.82) 0%, rgba(186, 32, 39, 0.82) 100%);
-  filter: drop-shadow(0 8px 14px rgba(186, 32, 39, 0.34));
   transform: rotate(-45deg);
   transform-origin: center;
   isolation: isolate;
   cursor: pointer;
 }
 
-#places-map .map-location-marker::before {
+#places-map .academic-marker {
+  background: linear-gradient(180deg, rgba(232, 67, 57, 0.82) 0%, rgba(186, 32, 39, 0.82) 100%);
+  filter: drop-shadow(0 8px 14px rgba(186, 32, 39, 0.34));
+}
+
+#places-map .journey-marker {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: -0.575rem;
+  margin-left: -0.25rem;
+  background: linear-gradient(180deg, rgba(124, 124, 124, 0.82) 0%, rgba(82, 82, 82, 0.82) 100%);
+  filter: drop-shadow(0 8px 14px rgba(82, 82, 82, 0.3));
+}
+
+#places-map .academic-marker::before,
+#places-map .journey-marker::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -604,7 +618,15 @@ h6 {
   animation: map-marker-pulse 2.2s ease-out infinite;
 }
 
-#places-map .map-location-marker::after {
+#places-map .journey-marker::before {
+  width: 0.475rem;
+  height: 0.475rem;
+  border-width: 1px;
+  border-color: rgba(82, 82, 82, 0.34);
+}
+
+#places-map .academic-marker::after,
+#places-map .journey-marker::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -617,13 +639,22 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
-#places-map .map-location-marker:hover::before,
-#places-map .map-location-marker:focus-visible::before {
+#places-map .journey-marker::after {
+  width: 0.21rem;
+  height: 0.21rem;
+}
+
+#places-map .academic-marker:hover::before,
+#places-map .academic-marker:focus-visible::before,
+#places-map .journey-marker:hover::before,
+#places-map .journey-marker:focus-visible::before {
   animation-play-state: paused;
 }
 
-#places-map .map-location-marker:hover .map-marker-tooltip,
-#places-map .map-location-marker:focus-visible .map-marker-tooltip {
+#places-map .academic-marker:hover .map-marker-tooltip,
+#places-map .academic-marker:focus-visible .map-marker-tooltip,
+#places-map .journey-marker:hover .map-marker-tooltip,
+#places-map .journey-marker:focus-visible .map-marker-tooltip {
   opacity: 1;
   transform: translate(-50%, -0.45rem);
 }
