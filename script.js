@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuLayer = document.querySelector(".menu-layer");
   const menuBar = document.querySelector(".menu-bar");
   const menuLinks = document.querySelectorAll(".menu-link");
+  const themeToggle = document.querySelector(".theme-toggle");
   const sections = document.querySelectorAll(".page-section");
   const coverSection = document.querySelector(".cover-section");
   const placesMap = document.querySelector("#places-map");
@@ -10,6 +11,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapMarkers = placesMap?.querySelectorAll(".academic-marker, .journey-marker") ?? [];
   let activeSectionId = "cover";
   let menuMoveTimer;
+
+  const setTheme = (theme) => {
+    const nextTheme = theme === "dark" ? "dark" : "light";
+
+    document.documentElement.dataset.theme = nextTheme;
+
+    if (!themeToggle) return;
+
+    const isDark = nextTheme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    themeToggle.title = isDark ? "Switch to light theme" : "Switch to dark theme";
+  };
+
+  const getStoredTheme = () => {
+    try {
+      return localStorage.getItem("site-theme") || document.documentElement.dataset.theme || "light";
+    } catch (error) {
+      return document.documentElement.dataset.theme || "light";
+    }
+  };
+
+  setTheme(getStoredTheme());
 
   const updateMenuIndicator = (sectionId) => {
     if (!menuBar) return;
@@ -75,6 +99,18 @@ document.addEventListener("DOMContentLoaded", () => {
       updateMenuIndicator(activeSectionId);
     });
   }
+
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+
+    try {
+      localStorage.setItem("site-theme", nextTheme);
+    } catch (error) {
+      // Theme still switches for the current page even if storage is unavailable.
+    }
+
+    setTheme(nextTheme);
+  });
 
   window.addEventListener("scroll", updateMenuOpacity);
   window.addEventListener("resize", () => {

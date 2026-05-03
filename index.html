@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuxuan's Homepage</title>
+    <script>
+        (() => {
+            let storedTheme = "light";
+
+            try {
+                storedTheme = localStorage.getItem("site-theme") || "light";
+            } catch (error) {
+                storedTheme = "light";
+            }
+
+            const theme = storedTheme || "light";
+            document.documentElement.dataset.theme = theme;
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <script>
         window.MathJax = {
@@ -27,6 +41,9 @@
             <a class="menu-link" href="#projects">Projects</a>
             <a class="menu-link" href="#cv">CV</a>
             <a class="menu-link" href="#about">About</a>
+            <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+                <span class="theme-toggle-icon" aria-hidden="true"></span>
+            </button>
         </nav>
     </header>
 
